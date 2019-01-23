@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0061)file:///G:/S%20r%20Project/Web/sarsa2703.github.io/about.html -->
+<!-- saved from url=(0062)file:///G:/S%20r%20Project/Web/sarsa2703.github.io/about.html# -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -58,23 +58,33 @@ body {
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
-} .round {border-radius: 50%;}
+} 
+.round {border-radius: 50%;
+}
+.closer {
+    height:90%;
+    position:absolute;
+    width:90%;
+    display:none;
+    cursor:default;
+}
+    
 </style>
 <script>/* Set the width of the side navigation to 250px */
 function openNav() {
   document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("navClose").style.display = "block";
 }
 
 /* Set the width of the side navigation to 0 */
 function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("navClose").style.display = "none";
 }</script>
 	</head>
 	<body>
     <div id="mySidenav" class="sidenav" style="width: 0px;">
-    <a style="
-    width: 100%;
-" href="javascript:void(0)" onclick="closeNav()"></a>
+    
   <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><img src="file:///G:/S%20r%20Project/Web/sarsa2703.github.io/about_files/back.svg" style="
     width: 25px;
 "></a>
@@ -109,4 +119,4 @@ function closeNav() {
 
 
 
-</body></html>
+<a href="javascript:void(0)" class="closer" id="navClose" onclick="closeNav()" style="display: none;"></a></body></html>
