@@ -18,7 +18,7 @@ body {
   z-index: 1; /* Stay on top */
   top: 0; /* Stay at the top */
   left: 0;
-  background-color: #111; /* Black*/
+  background-color: #eaeaea; /* Black*/
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 60px; /* Place content 60px from the top */
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
@@ -58,8 +58,8 @@ body {
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
-}
-    </style>
+} .round {border-radius: 50%;}
+</style>
 <script>/* Set the width of the side navigation to 250px */
 function openNav() {
   document.getElementById("mySidenav").style.width = "250px";
@@ -72,15 +72,35 @@ function closeNav() {
 	</head>
 	<body>
     <div id="mySidenav" class="sidenav" style="width: 0px;">
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">×</a>
-  <a href="file:///G:/S%20r%20Project/Web/sarsa2703.github.io/about.html#">About</a>
-  <a href="file:///G:/S%20r%20Project/Web/sarsa2703.github.io/about.html#">Services</a>
-  <a href="file:///G:/S%20r%20Project/Web/sarsa2703.github.io/about.html#">Clients</a>
-  <a href="file:///G:/S%20r%20Project/Web/sarsa2703.github.io/about.html#">Contact</a>
+    <a style="
+    width: 100%;
+" href="javascript:void(0)" onclick="closeNav()"></a>
+  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><img src="file:///G:/S%20r%20Project/Web/sarsa2703.github.io/about_files/back.svg" style="
+    width: 25px;
+"></a>
+<img src="file:///G:/S%20r%20Project/Web/sarsa2703.github.io/index_files/profile.png" class="round" style="
+    width: 150px;
+    padding-left: 0px;
+    margin-left: 40px;
+">
+  <a href="file:///G:/S%20r%20Project/Web/sarsa2703.github.io/about.html#" style="
+    padding-left: 0px;
+    padding-right: 50px;
+    margin-top: 20px;
+"><div style="
+    background-color: #0084FF;
+    border-top-right-radius: 17px;
+    border-bottom-right-radius: 17px;
+    height: 34px;
+    width: 180px;
+"><p style="color: white;padding-left: 40px;font-size: 20px;padding-top: 4px;">About</p></div></a>
+  
+  
+  
 </div>
 
 <!-- Use any element to open the sidenav -->
-<button onclick="openNav()" style="background-color: white;border-radius: 6px;border-color: gainsboro;border-style: solid;border-width: thin;"><img src="file:///G:/S%20r%20Project/Web/sarsa2703.github.io/about_files/menu.svg" style="
+<button onclick="openNav()" style="background-color: white;border-radius: 6px;border-color: gainsboro;border-style: solid;border-width: thin;height: 29px;width: 36px;"><img src="file:///G:/S%20r%20Project/Web/sarsa2703.github.io/about_files/menu.svg" style="
     width: 20px;
     padding-top: 2px;
 "></button>
