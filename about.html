@@ -39,21 +39,6 @@ body {
   color: #f1f1f1;
 }
 
-/* Position and style the close button (top right corner) */
-.sidenav .closebtn {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 36px;
-  margin-left: 50px;
-}
-
-/* Style page content - use this if you want to push the page content to the right when you open the side navigation */
-#main {
-  transition: margin-left .5s;
-  padding: 20px;
-}
-
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
@@ -72,6 +57,7 @@ body {
 }
     
 </style>
+
 <script>/* Set the width of the side navigation to 250px */
 function openNav() {
   document.getElementById("mySidenav").style.width = "250px";
@@ -82,7 +68,8 @@ function openNav() {
 function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
   document.getElementById("navClose").style.display = "none";
-}</script>
+}
+</script>
 	</head>
 	<body>
     <div id="mySidenav" class="sidenav" style="width: 0px;">
