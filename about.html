@@ -10,7 +10,7 @@ body {
  font-family: 'Open Sans', sans-serif;
  font-size: 20px;
  }
-    /* The side navigation menu */
+ /* The side navigation menu */
 .sidenav {
   height: 100%; /* 100% Full-height */
   width: 0; /* 0 width - change this with JavaScript */
@@ -62,9 +62,11 @@ body {
 .round {border-radius: 50%;
 }
 .closer {
-    height:90%;
-    position:absolute;
-    width:90%;
+    height:100%;
+    position:fixed;
+    top: 0;
+    left : 0;
+    width:100%;
     display:none;
     cursor:default;
 }
@@ -84,16 +86,13 @@ function closeNav() {
 	</head>
 	<body>
     <div id="mySidenav" class="sidenav" style="width: 0px;">
-    
-  <a href="javascript:void(0)" class="closebtn" onclick="closeNav()"><img src="./about_files/back.svg" style="
-    width: 25px;
-"></a>
+
 <img src="./index_files/profile.png" class="round" style="
     width: 150px;
     padding-left: 0px;
     margin-left: 40px;
 ">
-  <a href="./about.html#" style="
+  <a href="#" style="
     padding-left: 0px;
     padding-right: 50px;
     margin-top: 20px;
@@ -105,18 +104,15 @@ function closeNav() {
     width: 180px;
 "><p style="color: white;padding-left: 40px;font-size: 20px;padding-top: 4px;">About</p></div></a>
   
-  
-  
 </div>
 
 <!-- Use any element to open the sidenav -->
+
 <button onclick="openNav()" style="background-color: white;border-radius: 6px;border-color: gainsboro;border-style: solid;border-width: thin;height: 29px;width: 36px;"><img src="./about_files/menu.svg" style="
     width: 20px;
     padding-top: 2px;
 "></button>
 
-<!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
-
-
+<!-- Closes Sidenav when Clicked Outside -->
 
 <a href="javascript:void(0)" class="closer" id="navClose" onclick="closeNav()" style="display: none;"></a></body></html>
