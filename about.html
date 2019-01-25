@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- saved from url=(0062)./about.html# -->
+<!-- saved from url=(0062)# -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
@@ -24,7 +24,7 @@ body {
   height: 100%; /* 100% Full-height */
   width: 0; /* 0 width - change this with JavaScript */
   position: fixed; /* Stay in place */
-  z-index: 1; /* Stay on top */
+  z-index: 100; /* Stay on top */
   top: 0; /* Stay at the top */
   left: 0;
   background-color: #eaeaea; /* Black*/
@@ -33,37 +33,93 @@ body {
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 }
 
-/* The navigation menu links */
-.sidenav a {
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 25px;
-  color: #818181;
-  display: block;
-  transition: 0.3s;
-}
-
-/* When you mouse over the navigation links, change their color */
-.sidenav a:hover {
-  color: #f1f1f1;
-}
-
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
   .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 } 
+/* For Round Images */
 .round {border-radius: 50%;
 }
+    
 .closer {
     height:100%;
     position:fixed;
     top: 0;
     left : 0;
-    width:100%;
-    display:none;
-    cursor:default;
+    width: 100%;
+    display: none;
+    cursor: default;
+    z-index: 99;
 }
+
+.dimmer {
+    height:100%;
+    position:fixed;
+    top: 0;
+    left : 0;
+    width: 100%;
+}
+    
+.navitemact {
+    text-decoration: none;
+}
+    
+.navitemact > div {
+    background-color: #0084FF;
+    border-top-right-radius: 17px;
+    border-bottom-right-radius: 17px;
+    height: 34px;
+    width: 180px;
+}
+    
+.navitemact > div > p {
+    color: white;
+    padding-left: 40px;
+    font-size: 20px;
+    padding-top: 7px;
+}
+    
+.navitemdis {
+    text-decoration: none;
+}
+    
+.navitemdis > div {
+    background-color: #ffffff00;
+    border-top-right-radius: 17px;
+    border-bottom-right-radius: 17px;
+    height: 34px;
+    width: 160px;
+    transition: 0.5s;
+}
+
+.navitemdis > div:hover {
+    background-color: #d4d4d4;
+    transition: 0.5s;
+}
+
+.navitemdis > div > p {
+    color: grey;
+    padding-left: 40px;
+    font-size: 20px;
+    padding-top: 7px;
+}
+
+.topbar {
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    background-color: #0084FF;
+    height: 40px;
+    z-index: 1;
+    padding-top: 15px;
+    margin-top: 0px;
+    padding-left: 15px;
+
+}
+
+    
     
 </style>
 
@@ -71,44 +127,43 @@ body {
 function openNav() {
   document.getElementById("mySidenav").style.width = "250px";
   document.getElementById("navClose").style.display = "block";
+  document.getElementById("navClose").style.background = "#00000047";
 }
 
 /* Set the width of the side navigation to 0 */
 function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
   document.getElementById("navClose").style.display = "none";
+  document.getElementById("navClose").style.background = "#ffffff00";
 }
 </script>
 	</head>
-	<body>
+	<body style="background-color: white;">
     <div id="mySidenav" class="sidenav" style="width: 0px;">
 
-<img src="./index_files/profile.png" class="round" style="
+<img src="./resource/profile.png" class="round" style="
     width: 150px;
     padding-left: 0px;
     margin-left: 40px;
 ">
-  <a href="#" style="
-    padding-left: 0px;
-    padding-right: 50px;
-    margin-top: 20px;
-"><div style="
-    background-color: #0084FF;
-    border-top-right-radius: 17px;
-    border-bottom-right-radius: 17px;
-    height: 34px;
-    width: 180px;
-"><p style="color: white;padding-left: 40px;font-size: 20px;padding-top: 4px;">About</p></div></a>
-  
+  <a href="#" class="navitemact"><div><p>About</p></div></a>
+  <a href="#" class="navitemdis"><div><p>Contact</p></div></a>
+    
 </div>
 
 <!-- Use any element to open the sidenav -->
 
-<button onclick="openNav()" style="background-color: white;border-radius: 6px;border-color: gainsboro;border-style: solid;border-width: thin;height: 29px;width: 36px;"><img src="./about_files/menu.svg" style="
+<div class="topbar" style="
+"><button onclick="openNav()" style="border-color: gainsboro;border-style: solid;border-width: 0px;height: 29px;width: 36px;border-radius: 8px;background-color: #0079ea;"><img src="./resource/menu.svg" style="
     width: 20px;
     padding-top: 2px;
-"></button>
+"></button><text style="
+    color: white;
+    padding-left: 15px;
+    font-size: 25px;
+">About<text></text></text></div>
 
 <!-- Closes Sidenav when Clicked Outside -->
 
-<a href="javascript:void(0)" class="closer" id="navClose" onclick="closeNav()" style="display: none;"></a></body></html>
+<a href="#" class="closer" id="navClose" onclick="closeNav()" style="display: none; background: rgba(255, 255, 255, 0);"></a>
+</body></html>
