@@ -13,6 +13,12 @@
   font-family: Primary;
   src: url(./fonts/font-regular.ttf) format("truetype");
 }
+
+@font-face {
+  font-family: Primary-Bold;
+  src: url(./fonts/font-Bold.ttf) format("truetype");
+}
+
 @font-face {
   font-family: Secondary;
   src: url(./fonts/font2-regular.ttf) format("truetype");
@@ -54,20 +60,11 @@ body {
     display: none;
     cursor: default;
     z-index: 99;
-    transition: 1s;
-}
-
-.dimmer {
-    height:100%;
-    position:fixed;
-    top: 0;
-    left : 0;
-    width: 100%;
 }
     
 .navitemact {
     text-decoration: none;
-    width: 180px;
+    cursor: default;
 }
     
 .navitemact > div {
@@ -123,7 +120,39 @@ body {
     padding-left: 15px;
 
 }
+    
+#dimmer {
+    height:100%;
+    position:fixed;
+    top: 0;
+    left : 0;
+    width: 100%;
+    transition: 1s;
+    z-index: 90;
+    display: none;
+    transition-delay: 1s;
+}
 
+.bold {
+    font-family: Primary-Bold;
+}
+
+.chip {
+    background-color: white;
+    color: #0084ff;
+    border-radius: 1cm;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    margin-top: 3px;
+}
+
+#chipdown {
+    border-bottom-left-radius: 12px;
+}
+
+#chipup {
+    border-top-left-radius: 12px;
+}
     
     
 </style>
@@ -132,14 +161,16 @@ body {
 function openNav() {
   document.getElementById("mySidenav").style.width = "250px";
   document.getElementById("navClose").style.display = "block";
-  document.getElementById("navClose").style.background = "#00000047";
+  document.getElementById("dimmer").style.background = "#00000047";
+  document.getElementById("dimmer").style.display = "block";
 }
 
 /* Set the width of the side navigation to 0 */
 function closeNav() {
   document.getElementById("mySidenav").style.width = "0";
   document.getElementById("navClose").style.display = "none";
-  document.getElementById("navClose").style.background = "#ffffff00";
+  document.getElementById("dimmer").style.background = "#ffffff00";
+  document.getElementById("dimmer").style.display = "none";
 }
 </script>
 	</head>
@@ -153,7 +184,7 @@ function closeNav() {
     margin-left: 40px;
 ">
 <!-- Add Navigation Contents Here. Active-navitemact, unactive-navitemdis -->  
-<a href="#" class="navitemact"><div><p>About</p></div></a>
+<a class="navitemact"><div><p>About</p></div></a>
 <a href="#" class="navitemdis"><div><p>Contact</p></div></a>
     
 </div>
@@ -170,13 +201,36 @@ function closeNav() {
 ">About<text></text></text></div>
 
 
-<!-- Closes Sidenav when Clicked Outside --><div style="
+<div style="
     width: 100%;
     top: 0;
     left: 0;
-    height: 400px;
+    height: 100%;
     background-color: #0084FF;
     text-align: center;
-"><img src="./resource/s.png" style="width: 300px;margin-top: 50px;"></div>
-<a href="#" class="closer" id="navClose" onclick="closeNav()" style="display: none; background: rgba(255, 255, 255, 0);"></a>
+"><img src="./resource/s.png" style="width: 300px;margin-top: 50px;">
+<div style="position: absolute;left: 50%;margin-left: -106px;margin-top: 20px;"><div id="chipdown" class="chip" style="
+    width: 80px;
+"><text style="">Hello</text></div>
+
+<div id="chipup" class="chip" style="
+    width: 212px;
+"><text>I am <text class="bold">Sarsa Murmu</text></text></div></div><div style="
+    margin-top: 120px;
+    background-color: #0076e5;
+    height: 8px;
+    width: 100px;
+    border-radius: 1cm;
+    position: absolute;
+    left: 50%;
+    margin-left: -50px;
+"></div><div style="
+    margin-top: 156px;
+    margin-bottom: 50px;
+    padding-left: 30px;
+    padding-right: 30px;
+    color: #ffffff;
+"><text>I'm also known as Sarsa2703. I'm currently a Student of Ukhra Kunja Behari Institution. I live in India.</text><br><br><text style="padding-top: 10px;">In off-time I work on Some Side projects, Like this Webpage. I also like Designing.</text></div></div>
+<!-- Closes Sidenav when Clicked Outside --><a class="closer" id="navClose" onclick="closeNav()" style="display: none; background: rgba(255, 255, 255, 0);"></a><!-- Dim the Screen When Sidebar opens -->
+<div id="dimmer" style="background: rgba(255, 255, 255, 0); display: none;"></div>
 </body></html>
