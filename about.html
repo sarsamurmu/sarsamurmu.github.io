@@ -59,12 +59,7 @@ body {
   padding-top: 20px; /* Place content 60px from the top */
   transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
 }
-
-/* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-} 
+ 
 /* For Round Images */
 .round {border-radius: 50%;
 }
@@ -303,7 +298,29 @@ b {
     }
 
 }
-    
+
+.description {
+    margin-top: 156px;
+    color: #ffffff;
+    padding-bottom: 40px;
+    width: 600px;
+    margin-left: -300px;
+    left: 50%;
+    position: absolute;
+    text-align: left;
+}
+
+/* Descriptions for screens with width lower than 680px */
+@media screen and (max-width: 680px) {
+  .description {
+    position: unset;
+    margin-left: 0;
+    padding-left: 30px;
+    padding-right: 30px;
+    width: unset;
+
+}
+}    
     
 </style>
 
@@ -355,7 +372,7 @@ function closeNav() {
     
 <!-- Add Navigation Contents Here. Active-navitemact, unactive-navitemdis -->  
 <a class="navitemact"><div><p>About</p></div></a>
-<a href="file:///G:/S%20r%20Project/Web/sarsa2703.github.io/about.html#" class="navitemdis"><div><p>Contact</p></div></a>
+<a href="#" class="navitemdis"><div><p>Contact</p></div></a>
     
 </div>
 
@@ -396,17 +413,6 @@ function closeNav() {
     position: absolute;
     left: 50%;
     margin-left: -50px;
-"></div><div style="
-    margin-top: 156px;
-    padding-left: 30px;
-    padding-right: 30px;
-    color: #ffffff;
-    padding-bottom: 40px;
-    width: 600px;
-    margin-left: -300px;
-    left: 50%;
-    position: absolute;
-    text-align: left;
-"><text>I'm also known as Sarsa2703. From India. I'm a currently a Student.</text><br><br><text>In off-time I like to do projects. You can check them on Works Section. I also like Designing.</text></div></div><!-- Closes Sidenav when Clicked Outside --><div id="dimmer" style="background: rgba(255, 255, 255, 0); width: 0%;"><a class="closer" id="navClose" onclick="closeNav()" style="background: rgba(255, 255, 255, 0);"></a></div><!-- Dim the Screen When Sidebar opens -->
+"></div><div class="description"><text>I'm also known as Sarsa2703. From India. I'm a currently a High School Student.</text><br><br><text>In off-time I like to do projects. You can check them on Works Section. I also like Designing.</text></div></div><!-- Closes Sidenav when Clicked Outside --><div id="dimmer" style="background: rgba(255, 255, 255, 0); width: 0%;"><a class="closer" id="navClose" onclick="closeNav()" style="background: rgba(255, 255, 255, 0);"></a></div><!-- Dim the Screen When Sidebar opens -->
 
 </body></html>
