@@ -1,0 +1,357 @@
+/* Scroll Bar Start */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+    background-color: #ffffff00;
+}
+
+::-webkit-scrollbar-thumb {
+   border-top-left-radius: 6px;
+   border-bottom-left-radius: 6px;
+   background-color: #ffffff;
+}
+
+/* Scroll Bar End */
+
+/* Font Face Start */
+@font-face {
+  font-family: Primary;
+  src: url(./fonts/font-regular.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: Primary-Bold;
+  src: url(./fonts/font-bold.ttf) format("truetype");
+}
+
+@font-face {
+  font-family: Secondary;
+  src: url(./fonts/font2-regular.ttf) format("truetype");
+}
+
+/* Font Face End */
+
+#body {
+  overflow: auto;
+  font-family: Primary;
+  font-size: 20px;
+  margin: 0px;
+ }
+ 
+text {
+  cursor: default;
+}
+
+h1 {
+	font-family: Primary-Bold;
+}
+
+ /* The side navigation menu */
+.sidenav {
+  height: 100%; /* 100% Full-height */
+  width: 0; /* 0 width - change this with JavaScript */
+  position: fixed; /* Stay in place */
+  z-index: 100; /* Stay on top */
+  top: 0; /* Stay at the top */
+  left: 0;
+  overflow-x: hidden; /* Disable horizontal scroll */
+  padding-top: 20px; /* Place content 60px from the top */
+  transition: 0.4s; /* 0.5 second transition effect to slide in the sidenav */
+}
+
+/* Side Navigation Menu Active Item */
+    
+.navitemact {
+    text-decoration: none;
+    cursor: default;
+}
+    
+.navitemact > div {
+    border-top-right-radius: 17px;
+    border-bottom-right-radius: 17px;
+    height: 34px;
+    width: 200px;
+}
+    
+.navitemact > div > p {
+    padding-left: 40px;
+    font-size: 20px;
+    padding-top: 7px;
+}
+
+/* Side Menu Inactive Items */
+    
+.navitemdis {
+    text-decoration: none;
+}
+    
+.navitemdis > div {
+    border-top-right-radius: 17px;
+    border-bottom-right-radius: 17px;
+    height: 34px;
+    width: 160px;
+    transition: 0.5s;
+}
+
+.navitemdis > div:hover {
+    transition: 0.5s;
+}
+
+.navitemdis > div > p {
+    padding-left: 40px;
+    font-size: 20px;
+    padding-top: 7px;
+}
+
+.topbar {
+    width: 100%;
+    top: 0;
+    left: 0;
+    position: fixed;
+    height: 40px;
+    z-index: 1;
+    padding-top: 15px;
+    margin-top: 0px;
+    padding-left: 15px;
+
+}
+
+#navClose {
+    height:100%;
+    top: 0;
+    left : 0;
+    width: 100%;
+    cursor: default;
+    transition: 0.5s;
+    display: block;
+}
+    
+#dimmer {
+    height:100%;
+    position:fixed;
+    top: 0;
+    left : 0;
+    width: 0%;
+    z-index: 99;
+    display: block;
+}
+
+/* Bold Font */
+
+b {
+    font-family: Primary-Bold;
+}
+
+/* Message Chip Box */
+
+.chip {
+    background-color: white;
+    color: #0084ff;
+    border-radius: 1cm;
+    padding-top: 4px;
+    padding-bottom: 4px;
+    margin-top: 3px;
+}
+
+#chipdown {
+    border-bottom-left-radius: 18px;
+}
+
+#chipup {
+    border-top-left-radius: 15px;
+}
+
+/* Background For Animating Back Particles */
+
+.backdiv {
+   width: 100%;
+   height: 100%;
+   position: Absolute;
+   top: 0;
+   left: 0;
+}
+
+.circles{
+    position: fixed;
+    z-index: -1;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.circles li{
+    position: absolute;
+    display: block;
+    list-style: none;
+    width: 20px;
+    height: 20px;
+    animation: animate 25s linear infinite;
+    bottom: -150px;
+    
+}
+
+.circles li:nth-child(1){
+    left: 25%;
+    width: 80px;
+    height: 80px;
+    animation-delay: 0s;
+}
+
+
+.circles li:nth-child(2){
+    left: 10%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 2s;
+    animation-duration: 12s;
+}
+
+.circles li:nth-child(3){
+    left: 70%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 4s;
+}
+
+.circles li:nth-child(4){
+    left: 40%;
+    width: 60px;
+    height: 60px;
+    animation-delay: 0s;
+    animation-duration: 18s;
+}
+
+.circles li:nth-child(5){
+    left: 65%;
+    width: 20px;
+    height: 20px;
+    animation-delay: 0s;
+}
+
+.circles li:nth-child(6){
+    left: 75%;
+    width: 110px;
+    height: 110px;
+    animation-delay: 3s;
+}
+
+.circles li:nth-child(7){
+    left: 35%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 7s;
+}
+
+.circles li:nth-child(8){
+    left: 50%;
+    width: 25px;
+    height: 25px;
+    animation-delay: 15s;
+    animation-duration: 45s;
+}
+
+.circles li:nth-child(9){
+    left: 20%;
+    width: 15px;
+    height: 15px;
+    animation-delay: 2s;
+    animation-duration: 35s;
+}
+
+.circles li:nth-child(10){
+    left: 85%;
+    width: 150px;
+    height: 150px;
+    animation-delay: 0s;
+    animation-duration: 11s;
+}
+
+
+
+@keyframes animate {
+
+    0%{
+        transform: translateY(0) rotate(0deg);
+        opacity: 1;
+        border-radius: 0;
+    }
+
+    100%{
+        transform: translateY(-1000px) rotate(720deg);
+        opacity: 0;
+        border-radius: 50%;
+    }
+
+}
+
+/* Back animation ends */
+
+.projectitem {
+    background-color: white;
+    border-color: white;
+    border-radius: 17px;
+    margin: 20px;
+}
+
+.projectitem > img {
+    margin: 4px;
+    border-radius: 17px;
+    width: 300px;
+}
+
+.projectitem > div {
+    text-align: left;
+    padding: 10px;
+    padding-left: 17px;
+}
+
+.projectitem > div > text {
+    color: #424242;
+    font-family: primary-bold;
+}
+
+.projectitem > div > div {
+    width: 280px;
+    color: #757575;
+    font-family: secondary;
+    font-size: 12px;
+}
+
+.getit {
+    background-color: #ffffff;
+    border-color: #00000029;
+    border-style: solid;
+    border-radius: 1cm;
+    height: 27px;
+    width: 90px;
+    font-family: primary-bold;
+    border-width: 1px;
+    cursor: pointer;
+    padding-top: 3px;
+	transition: 0.4s;
+}
+
+#resget {
+	color: #0084ff;
+}
+
+#resadget {
+	color: #e8801a;
+}
+
+.getit:hover {
+	border-width: 0px;
+}
+
+#resget:hover {
+	background-color: #0084FF;
+	color: #ffffff;
+}
+
+#resadget:hover {
+	background-color: #e8801a;
+	color: #ffffff;
+}
+

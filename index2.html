@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<!-- saved from url=(0062)./index2.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+<meta name="theme-color" content="#0084FF">
+<title>Sarsa Murmu</title>
+<link rel="icon" href="./resource/favicon.png" sizes="192x192" type="image/png">
+<!-- The Main CSS's -->
+<link rel="stylesheet" type="text/css" href="./stylesheet/main.css">
+<link rel="stylesheet" type="text/css" href="./stylesheet/default.css">
+
+<style>
+.description {
+    color: #ffffff;
+    margin-top: 40px;
+    padding-bottom: 40px;
+    width: 600px;
+    text-align: center;
+}
+
+/* Descriptions for screens with width lower than 680px */
+@media screen and (max-width: 680px) {
+  .description {
+    position: unset;
+    margin-left: 0;
+    padding-left: 30px;
+    padding-right: 30px;
+    width: unset;
+
+}
+}    
+</style>
+
+<script>/* Set the width of the side navigation to 250px */
+function openNav() {
+  document.getElementById("mySidenav").style.width = "250px";
+  document.getElementById("dimmer").style.width = "100%";
+  document.getElementById("dimmer").style.transition = "0s";
+  document.getElementById("navClose").style.background = "#00000047";
+  document.getElementById("body").style.overflow = "hidden";
+}
+
+/* Set the width of the side navigation to 0 */
+function closeNav() {
+  document.getElementById("mySidenav").style.width = "0";
+  document.getElementById("dimmer").style.width = "0%";
+  document.getElementById("dimmer").style.transitionDelay = "0.7s";
+  document.getElementById("navClose").style.background = "#ffffff00";
+  document.getElementById("body").style.overflow = "auto";
+}
+</script>
+	</head>
+	<body id="body" style="overflow: auto;">
+<!-- Background Animation -->
+<div class="backdiv"><ul class="circles" style="
+    padding: 0;
+">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                    <li></li>
+            </ul></div>
+<!-- The Sidenav -->
+<div id="mySidenav" class="sidenav" style="width: 0px;">
+<img src="./resource/nav.png" style="
+    width: 150px;
+    padding-left: 0px;
+    margin-left: 40px;
+">
+    
+<!-- Add Navigation Contents Here. Active-navitemact, unactive-navitemdis -->  
+<a class="navitemact"><div><p>Home</p></div></a>
+<a href="#projects" class="navitemdis"><div><p>Projects</p></div></a>
+<a href="#" class="navitemdis"><div><p>About</p></div></a>
+
+    
+</div><!-- The Topbar -->
+
+
+
+<div class="topbar"><button onclick="openNav()" style="border-color: gainsboro;border-style: solid;border-width: 0px;height: 29px;width: 36px;border-radius: 8px;background-color: #0079ea;"><img src="./resource/menu.svg" style="
+    width: 20px;
+    padding-top: 2px;
+"></button><text style="
+    padding-left: 15px;
+    font-size: 25px;
+">Home<text></text></text></div>
+
+
+
+<div style="
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+"><img src="./resource/s.png" style="width: 300px;margin-top: 50px;">
+<div>
+<div id="chipdown" class="chip" style="
+    width: 88px;
+    border-bottom-left-radius: 18px;
+"><text>Hello</text></div>
+
+<div id="chipup" class="chip" style="
+    font-size: 23px;
+    width: 236px;
+"><text>I'm <b>Sarsa Murmu</b></text></div></div><div class="description"><text>Currently a Simple Boy and a High School Student.</text>
+<br>
+<text>I'm also known as Sarsa2703.</text><br><br><text id="projects" tabindex="-1" style="outline: none;">I love Colors and Flat Theming.</text></div>
+</div>
+
+
+<div style="
+    text-align: center;
+"><h1 tabindex="-1" style="outline: none;">Projects</h1></div><div style="
+    display: flex;
+    flex-wrap: wrap;
+    padding: 14px;
+    justify-content: center;
+"><!-- Resicon Pack - Flat -->
+<div class="projectitem"><img src="./resource/resiconfh.png"><div><text>Resicon Pack - Flat</text>
+<br><div><text>A Minimal Icon Pack Based on My Own Design Guidline. Mainly For Customizers and Color Lovers.</text></div>
+<div style="text-align: right;"><a><button id="resget" class="getit">Get It!</button></a></div></div></div>
+<!-- Resicon Pack - Adaptive -->
+
+<div class="projectitem"><img src="./resource/resiconah.png"><div><text>Resicon Pack - Adaptive</text>
+<br><div><text>Nothing Much, Just Adaptive version of Resicon Pack.</text>
+
+<br><br></div>
+<div style="text-align: right;"><a><button class="getit" id="resadget">Get It!</button></a></div></div></div></div><!-- Dim the Screen When Sidebar opens --><!-- Closes Sidenav when Clicked Outside --><div id="dimmer" style="background: rgba(255, 255, 255, 0); width: 0%; transition: all 0s ease 0.7s;"><a class="closer" id="navClose" onclick="closeNav()" style="background: rgba(255, 255, 255, 0);"></a></div>
+<script src="./scripts/smooth-scroll.polyfills.js"></script>
+<script>
+	var scroll = new SmoothScroll('a[href*="#"]', {
+	speed: 1000
+});
+</script>
+
+</body></html>

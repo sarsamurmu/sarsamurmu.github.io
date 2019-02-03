@@ -1,0 +1,34 @@
+#body {
+   background-color: #0084FF; /* Body Background Color */ /* Blue */
+   color: white; /* Body Text Color */ /* White */
+}
+
+.sidenav {
+	background-color: #eaeaea; /* Sidenav Background Color */ /* Somewhat Grey */
+}
+
+.navitemact > div {
+	background-color: #0084FF; /* Navigation Menu Active Item Background Color */ /* Blue */
+	color: white; /* Navigation Menu Active Item Text Color */ /* white */
+}
+	
+.navitemdis > div {
+	background-color: #ffffff00; /* Navigation Menu InActive Item Background Color */ /* transparent */
+	color: grey; /* Navigation Menu InActive Item Text Color */ /* grey */
+}
+
+.navitemdis > div:hover {
+    background-color: #d4d4d4;  /* Navigation Menu InActive Item Background Color When Hovering */ /* Somewhat Grey */
+	color: grey; /* Navigation Menu InActive Item Text Color */ /* grey */
+}
+
+.topbar {
+	background-color: #0084FF; /* Topbar Background Color */ /* Blue */
+	color: white; /* Topbar Text Color */
+}
+
+.circles li{
+	background: rgba(255, 255, 255, 0.2); /* Animating Particle's Color */
+}
+
+
