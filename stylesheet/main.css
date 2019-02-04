@@ -16,20 +16,24 @@
 /* Font Face Start */
 @font-face {
   font-family: Primary;
-  src: url(./fonts/font-regular.ttf) format("truetype");
+  src: url(../fonts/font-regular.ttf) format("truetype");
 }
 
 @font-face {
   font-family: Primary-Bold;
-  src: url(./fonts/font-bold.ttf) format("truetype");
+  src: url(../fonts/font-bold.ttf) format("truetype");
 }
 
 @font-face {
   font-family: Secondary;
-  src: url(./fonts/font2-regular.ttf) format("truetype");
+  src: url(../fonts/font2-regular.ttf) format("truetype");
 }
 
 /* Font Face End */
+
+button {
+  outline: none !important;
+}
 
 #body {
   overflow: auto;
