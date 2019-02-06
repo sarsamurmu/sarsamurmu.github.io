@@ -60,7 +60,7 @@ h1 {
   left: -251px;
   overflow-x: hidden; /* Disable horizontal scroll */
   padding-top: 20px; /* Place content 60px from the top */
-  transition: 0.4s;
+  transition: 0.5s;
 }
 
 /* Side Navigation Menu Active Item */
