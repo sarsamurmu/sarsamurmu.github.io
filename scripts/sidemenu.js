@@ -23,20 +23,18 @@ function endDim() {
   document.getElementById("dim-container").style.width = "0%";
   document.getElementById("dim-container").style.transitionDelay = "0.55s";
   dimmer.classList.remove("menu--visible");
-  toggleSideMenu();
 }
 
 function OnTransitionEnd() {
 	sideMenu.classList.remove("menu--animatable");
 }
 
-var sideMenu = document.querySelector(".sidemenu");
-var oppMenu = document.querySelector(".menu-icon");
+var sideMenu = document.querySelector(".sidemenu");
 var dimmer = document.querySelector(".dimmer");
 var body = document.querySelector(".body");
 var projecttext = document.querySelector(".projecttext");
 sideMenu.addEventListener("transitionend", OnTransitionEnd, false);
-projecttext.addEventListener("click", toggleSideMenu, false);
-oppMenu.addEventListener("click", toggleSideMenu, false);
+projecttext.addEventListener("click", toggleSideMenu, false);
 dimmer.addEventListener("click", toggleSideMenu, false);
-
+function closeNav(){ endDim(); toggleSideMenu(); }
+function openNav(){ startDim(); toggleSideMenu(); }
