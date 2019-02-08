@@ -88,7 +88,7 @@
     
 <!-- Add Navigation Contents Here. Active-navitemact, unactive-navitemdis -->  
 <a class="navitemact"><div><p>Home</p></div></a>
-<a href="./index2.html#projects" class="navitemdis projecttext" onclick="endDim()"><div><p>Projects</p></div></a>
+<a href="./index2.html#projects" class="navitemdis projecttext" onclick="endDim(); toggleSideMenu();"><div><p>Projects</p></div></a>
 <a href="./index2.html#" class="navitemdis"><div><p>About</p></div></a>
         </div>
 </div>
@@ -140,7 +140,7 @@
 <br><div><text>Nothing Much, Just Adaptive version of Resicon Pack.</text>
 
 <br><br></div>
-<div style="text-align: right;"><a><button class="getit" id="resadget">Get It!</button></a></div></div></div></div><!-- Dim the Screen When Sidebar opens --><!-- Closes Sidenav when Clicked Outside --><div id="dim-container"><a class="dimmer" onclick="toggleSideMenu (); endDim();"></a></div></div><script src="./scripts/sidemenu.js"></script>
+<div style="text-align: right;"><a><button class="getit" id="resadget">Get It!</button></a></div></div></div></div><!-- Dim the Screen When Sidebar opens --><!-- Closes Sidenav when Clicked Outside --><div id="dim-container"><a class="dimmer" onclick="endDim(); toggleSideMenu ();"></a></div></div><script src="./scripts/sidemenu.js"></script>
 <script src="./scripts/smooth-scroll.polyfills.js"></script>
 <script>
 	var scroll = new SmoothScroll('a[href*="#"]', {
