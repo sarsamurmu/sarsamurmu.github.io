@@ -1,59 +1,67 @@
 <!DOCTYPE html>
-<!-- saved from url=(0062)./index2.html -->
+<!-- saved from url=(0071)./index2.html#projects -->
 <html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
 <meta name="mobile-web-app-capable" content="yes">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
 <meta name="theme-color" content="#0084FF">
-<title>Sarsa Murmu</title>
+<title>Home - Sarsa Murmu</title>
+<meta name="description" content="Web Designer. This Site Contains All About Sarsa Murmu, His Works etc. ">
+<meta name="author" content="Sarsa Murmu">
+<meta name="keywords" content="sarsa, murmu, web, design, cool, projects, works">
+
+<meta property="og:title" content="Sarsa Murmu">
+<meta property="og:site_name" content="Sarsa Murmu">
+
+<!-- Schema.org markup for Google+ -->
+<meta itemprop="name" content="Sarsa Murmu">
+<meta itemprop="description" content="Web Designer. This Site Contains All About Sarsa Murmu, His Works etc. ">
+<meta itemprop="image" content="./resource/brand_logo.png">
+
+<!-- Open Graph data -->
+<meta property="og:title" content="Sarsa Murmu">
+<meta property="og:type" content="portfolio">
+<meta property="og:url" content="https://sarsa2703.github.io/">
+<meta property="og:image" content="./resource/brand_logo.png">
+<meta property="og:description" content="Web Designer. This Site Contains All About Sarsa Murmu, His Works etc. ">
+<meta property="og:site_name" content="Sarsa Murmu">
+<meta property="og:locale" content="en_US">
+<link rel="canonical" href="https://sarsa2703.github.io/">
+
+<!-- Twitter -->
+<!-- Twitter Card data -->
+<meta name="twitter:card" content="summary">
+<meta name="twitter:creator" content="@sarsamurmu">
+<meta name="twitter:site" content="@sarsamurmu">
+<meta name="twitter:title" content="Sarsa Murmu">
+<meta name="twitter:description" content="Web Designer. This Site Contains All About Sarsa Murmu, His Works etc. ">
+<!-- Twitter summary card with large image must be at least 280x150px -->
+<meta name="twitter:image:src" content="https://sarsa2703.github.io/resource/brand_logo.png">
+
+
+<!-- Theme Colors -->
+<meta name="theme-color" content="#0084FF">
+<meta name="msapplication-TileColor" content="#0084FF">
+<meta name="msapplication-navbutton-color" content="#0084FF">
+<meta name="apple-mobile-web-app-status-bar-style" content="#0084FF">
+
+<!-- Favicons -->
+<link rel="shortcut icon" href="./resource/favicon.png">
+<link rel="apple-touch-icon" href="./resource/favicon.png">
+<link rel="apple-touch-icon" sizes="192x192" href="./resource/favicon.png">
+<link rel="apple-touch-icon-precomposed" href="./resource/favicon.png">
+<meta name="msapplication-TileImage" content="./resource/favicon.png">
 <link rel="icon" href="./resource/favicon.png" sizes="192x192" type="image/png">
 <!-- The Main CSS's -->
 <link rel="stylesheet" type="text/css" href="./stylesheet/main.css">
 <link rel="stylesheet" type="text/css" href="./stylesheet/default.css">
+<link rel="stylesheet" type="text/css" href="./stylesheet/sidemenu.css">
+</head>
 
-<style>
-.description {
-    color: #ffffff;
-    margin-top: 40px;
-    padding-bottom: 40px;
-    width: 600px;
-    text-align: center;
-}
-
-/* Descriptions for screens with width lower than 680px */
-@media screen and (max-width: 680px) {
-  .description {
-    position: unset;
-    margin-left: 0;
-    padding-left: 30px;
-    padding-right: 30px;
-    width: unset;
-
-}
-}    
-</style>
-
-<script>/* Set the width of the side navigation to 250px */
-function openNav() {
-  document.getElementById("mySidenav").style.left = "0";
-  document.getElementById("dimmer").style.width = "100%";
-  document.getElementById("dimmer").style.transition = "0s";
-  document.getElementById("navClose").style.background = "#00000047";
-  document.getElementById("body").style.overflow = "hidden";
-}
-
-/* Set the width of the side navigation to 0 */
-function closeNav() {
-  document.getElementById("mySidenav").style.left = "-251px";
-  document.getElementById("dimmer").style.width = "0%";
-  document.getElementById("dimmer").style.transitionDelay = "0.55s";
-  document.getElementById("navClose").style.background = "#ffffff00";
-  document.getElementById("body").style.overflow = "auto";
-}
-</script>
-	</head>
-	<body id="body" style="overflow: auto;">
+<body class="body">
 <!-- Background Animation -->
-<div class="backdiv"><ul class="circles" style="
+<div class="backdiv">
+<ul class="circles" style="
     padding: 0;
 ">
                     <li></li>
@@ -68,7 +76,10 @@ function closeNav() {
                     <li></li>
             </ul></div>
 <!-- The Sidenav -->
-<div id="mySidenav" class="sidenav">
+<div class="sidemenu">
+    <div style="
+    padding-bottom: 80px;
+">
 <img src="./resource/nav.png" style="
     width: 150px;
     padding-left: 0px;
@@ -77,27 +88,27 @@ function closeNav() {
     
 <!-- Add Navigation Contents Here. Active-navitemact, unactive-navitemdis -->  
 <a class="navitemact"><div><p>Home</p></div></a>
-<a href="#projects" class="navitemdis" onclick="closeNav()"><div><p>Projects</p></div></a>
-<a href="#" class="navitemdis"><div><p>About</p></div></a>
+<a href="./index2.html#projects" class="navitemdis projecttext"><div><p>Projects</p></div></a>
+<a href="./index2.html#" class="navitemdis"><div><p>About</p></div></a>
+        </div>
+</div>
 
-    
-</div><!-- The Topbar -->
-
-
-
-<div class="topbar"><button onclick="openNav()" style="border-color: gainsboro;border-style: solid;border-width: 0px;height: 29px;width: 36px;border-radius: 8px;background-color: #0079ea;"><img src="./resource/menu.svg" style="
+<!-- The Topbar -->
+<div class="topbar">
+<button class="menu-icon" onclick="startDim()">
+<img src="./resource/menu.svg" style="
     width: 20px;
     padding-top: 2px;
-"></button><text style="
+">
+</button>
+<text style="
     padding-left: 15px;
     font-size: 25px;
-">Home<text></text></text></div>
+">Home</text>
+</div>
 
-
-
+<!-- Description -->
 <div style="
-    width: 100%;
-    height: 100%;
     text-align: center;
     display: flex;
     flex-direction: column;
@@ -118,14 +129,8 @@ function closeNav() {
 </div>
 
 
-<div style="
-    text-align: center;
-"><h1 tabindex="-1" style="outline: none;">Projects</h1></div><div style="
-    display: flex;
-    flex-wrap: wrap;
-    padding: 14px;
-    justify-content: center;
-"><!-- Resicon Pack - Flat -->
+<div class="center"><h1 tabindex="-1" style="">Projects</h1></div>
+<div class="center"><h3>Design</h3></div><div class="project-item-container"><!-- Resicon Pack - Flat -->
 <div class="projectitem"><img src="./resource/resiconfh.png"><div><text>Resicon Pack - Flat</text>
 <br><div><text>A Minimal Icon Pack Based on My Own Design Guidline. Mainly For Customizers and Color Lovers.</text></div>
 <div style="text-align: right;"><a><button id="resget" class="getit">Get It!</button></a></div></div></div>
@@ -135,7 +140,7 @@ function closeNav() {
 <br><div><text>Nothing Much, Just Adaptive version of Resicon Pack.</text>
 
 <br><br></div>
-<div style="text-align: right;"><a><button class="getit" id="resadget">Get It!</button></a></div></div></div></div><!-- Dim the Screen When Sidebar opens --><!-- Closes Sidenav when Clicked Outside --><div id="dimmer" style="background: rgba(255, 255, 255, 0); width: 0%; transition: all 0s ease 0.7s;"><a class="closer" id="navClose" onclick="closeNav()" style="background: rgba(255, 255, 255, 0);"></a></div>
+<div style="text-align: right;"><a><button class="getit" id="resadget">Get It!</button></a></div></div></div></div><!-- Dim the Screen When Sidebar opens --><!-- Closes Sidenav when Clicked Outside --><div id="dim-container"><a class="dimmer" onclick="toggleSideMenu();endDim();"></a></div></div><script src="./scripts/sidemenu.js"></script>
 <script src="./scripts/smooth-scroll.polyfills.js"></script>
 <script>
 	var scroll = new SmoothScroll('a[href*="#"]', {

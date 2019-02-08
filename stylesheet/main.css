@@ -31,11 +31,27 @@
 
 /* Font Face End */
 
+/* Sidenav Scrollbar */
+
+.sidemenu::-webkit-scrollbar {
+    width: 4px;
+    height: 6px;
+    background-color: #ffffff00;
+}
+
+.sidemenu::-webkit-scrollbar-thumb {
+   border-top-left-radius: 6px;
+   border-bottom-left-radius: 6px;
+   background-color: #0084FF;
+}
+
+/* Sidenav Scrollbar */
+
 button {
   outline: none !important;
 }
 
-#body {
+.body {
   overflow: auto;
   font-family: Primary;
   font-size: 20px;
@@ -48,19 +64,6 @@ text {
 
 h1 {
 	font-family: Primary-Bold;
-}
-
- /* The side navigation menu */
-.sidenav {
-  height: 100%; /* 100% Full-height */
-  width: 250px; /* 0 width - change this with JavaScript */
-  position: fixed; /* Stay in place */
-  z-index: 100; /* Stay on top */
-  top: 0; /* Stay at the top */
-  left: -251px;
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 20px; /* Place content 60px from the top */
-  transition: 0.5s;
 }
 
 /* Side Navigation Menu Active Item */
@@ -120,26 +123,6 @@ h1 {
 
 }
 
-#navClose {
-    height:100%;
-    top: 0;
-    left : 0;
-    width: 100%;
-    cursor: default;
-    transition: 0.5s;
-    display: block;
-}
-    
-#dimmer {
-    height:100%;
-    position:fixed;
-    top: 0;
-    left : 0;
-    width: 0%;
-    z-index: 99;
-    display: block;
-}
-
 /* Bold Font */
 
 b {
@@ -173,6 +156,7 @@ b {
    position: Absolute;
    top: 0;
    left: 0;
+   z-index: -1;
 }
 
 .circles{
@@ -357,5 +341,41 @@ b {
 #resadget:hover {
 	background-color: #e8801a;
 	color: #ffffff;
+}
+
+.description {
+    color: #ffffff;
+    margin-top: 40px;
+    padding-bottom: 40px;
+    width: 600px;
+    text-align: center;
+}
+
+/* Descriptions for screens with width lower than 680px */
+@media screen and (max-width: 680px) {
+  .description {
+    position: unset;
+    margin-left: 0;
+    padding-left: 30px;
+    padding-right: 30px;
+    width: unset;
+
+}
+}
+
+.project-item-container {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 14px;
+    justify-content: center;
+}
+
+.center {
+	text-align: center;
+}
+
+h3 {
+    margin-block-start: 50px;
+    margin-block-end: 1px;
 }
 

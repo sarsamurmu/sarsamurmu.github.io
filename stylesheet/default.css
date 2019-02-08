@@ -1,9 +1,9 @@
-#body {
+.body {
    background-color: #0084FF; /* Body Background Color */ /* Blue */
    color: white; /* Body Text Color */ /* White */
 }
 
-.sidenav {
+.sidemenu {
 	background-color: #eaeaea; /* Sidenav Background Color */ /* Somewhat Grey */
 }
 
