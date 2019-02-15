@@ -14,7 +14,6 @@ function closeSideMenu() {
  document.getElementById("dim-container").style.width = "0%";
   document.getElementById("dim-container").style.transitionDelay = "0.55s";
   dimmer.classList.remove("menu--visible");
-toggleSideMenu();
 }
 
 function OnTransitionEnd() {
@@ -25,8 +24,5 @@ var sideMenu = document.querySelector(".sidemenu");
 var oppMenu = document.querySelector(".menu-icon");
 var dimmer = document.querySelector(".dimmer");
 var body = document.querySelector(".body");
-var projecttext = document.querySelector(".projecttext");
 sideMenu.addEventListener("transitionend", OnTransitionEnd, false);
-projecttext.addEventListener("click", closeSideMenu, false);
-oppMenu.addEventListener("click", openSideMenu, false);
-dimmer.addEventListener("click", closeSideMenu, false);
+oppMenu.addEventListener("click", openSideMenu, false);dimmer.addEventListener("click", closeSideMenu, false);

@@ -4,20 +4,22 @@
 }
 
 .sidemenu {
-	background-color: #eaeaea; /* Sidenav Background Color */ /* Somewhat Grey */
+	background-color: #f3f2f2; /* Sidenav Background Color */ /* Somewhat Grey */
 }
 
-.navitemact > div {
+.navitems > .active > div, .navitems > .active > div:hover {
 	background-color: #0084FF; /* Navigation Menu Active Item Background Color */ /* Blue */
 	color: white; /* Navigation Menu Active Item Text Color */ /* white */
 }
+
+
 	
-.navitemdis > div {
+.navitems > a > div {
 	background-color: #ffffff00; /* Navigation Menu InActive Item Background Color */ /* transparent */
 	color: grey; /* Navigation Menu InActive Item Text Color */ /* grey */
 }
 
-.navitemdis > div:hover {
+.navitems > a > div:hover {
     background-color: #d4d4d4;  /* Navigation Menu InActive Item Background Color When Hovering */ /* Somewhat Grey */
 	color: grey; /* Navigation Menu InActive Item Text Color */ /* grey */
 }

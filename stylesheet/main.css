@@ -51,6 +51,11 @@ button {
   outline: none !important;
 }
 
+h1, h2, h3, h4 {
+	outline: none;
+	font-family: primary-bold;
+}
+
 .body {
   overflow: auto;
   font-family: Primary;
@@ -68,19 +73,19 @@ h1 {
 
 /* Side Navigation Menu Active Item */
     
-.navitemact {
+.navitems > .active {
     text-decoration: none;
     cursor: default;
 }
     
-.navitemact > div {
+.navitems > .active > div {
     border-top-right-radius: 17px;
     border-bottom-right-radius: 17px;
     height: 34px;
     width: 200px;
 }
     
-.navitemact > div > p {
+.navitems > .active > div > p {
     padding-left: 40px;
     font-size: 20px;
     padding-top: 7px;
@@ -88,11 +93,11 @@ h1 {
 
 /* Side Menu Inactive Items */
     
-.navitemdis {
+.navitems > a {
     text-decoration: none;
 }
     
-.navitemdis > div {
+.navitems > a > div {
     border-top-right-radius: 17px;
     border-bottom-right-radius: 17px;
     height: 34px;
@@ -100,11 +105,11 @@ h1 {
     transition: 0.5s;
 }
 
-.navitemdis > div:hover {
+.navitems > a > div:hover {
     transition: 0.5s;
 }
 
-.navitemdis > div > p {
+.navitems > a > div > p {
     padding-left: 40px;
     font-size: 20px;
     padding-top: 7px;
