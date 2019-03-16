@@ -9,5 +9,13 @@ Edit it to
 ```
 implementation 'com.github.danimahardhika.candybar-library:core:3.5.0-b4'
 
+implementation('com.github.danimahardhika.android-helpers:core:-SNAPSHOT') {
+
+changing = true
+
+}
+
 implementation 'com.afollestad.material-dialogs:core:0.9.5.0'
+
 ```
+Then in build.gradle(module) add this
