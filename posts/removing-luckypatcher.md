@@ -8,4 +8,6 @@ compile 'com.github.danimahardhika.candybar-library:core:3.5.0-b4'
 Edit it to
 ```
 implementation 'com.github.danimahardhika.candybar-library:core:3.5.0-b4'
+
+implementation 'com.afollestad.material-dialogs:core:0.9.5.0'
 ```
