@@ -154,149 +154,6 @@ b {
     font-family: Primary-Bold;
 }
 
-/* Message Chip Box */
-.chip {
-    background-color: white;
-    color: #0084ff;
-    border-radius: 1cm;
-    padding-top: 4px;
-    padding-bottom: 4px;
-    margin-top: 3px;
-}
-
-#chipdown {
-    border-bottom-left-radius: 18px;
-}
-
-#chipup {
-    border-top-left-radius: 15px;
-}
-
-/* Background For Animating Back Particles */
-.backdiv {
-   width: 100%;
-   height: 100%;
-   position: Absolute;
-   top: 0;
-   left: 0;
-}
-
-.circles{
-    position: fixed;
-    z-index: -1;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-}
-
-.circles li{
-    position: absolute;
-    display: block;
-    list-style: none;
-    width: 20px;
-    height: 20px;
-    background: rgba(255, 255, 255, 0.2);
-    animation: animate 25s linear infinite;
-    bottom: -150px;
-    
-}
-
-.circles li:nth-child(1){
-    left: 25%;
-    width: 80px;
-    height: 80px;
-    animation-delay: 0s;
-}
-
-
-.circles li:nth-child(2){
-    left: 10%;
-    width: 20px;
-    height: 20px;
-    animation-delay: 2s;
-    animation-duration: 12s;
-}
-
-.circles li:nth-child(3){
-    left: 70%;
-    width: 20px;
-    height: 20px;
-    animation-delay: 4s;
-}
-
-.circles li:nth-child(4){
-    left: 40%;
-    width: 60px;
-    height: 60px;
-    animation-delay: 0s;
-    animation-duration: 18s;
-}
-
-.circles li:nth-child(5){
-    left: 65%;
-    width: 20px;
-    height: 20px;
-    animation-delay: 0s;
-}
-
-.circles li:nth-child(6){
-    left: 75%;
-    width: 110px;
-    height: 110px;
-    animation-delay: 3s;
-}
-
-.circles li:nth-child(7){
-    left: 35%;
-    width: 150px;
-    height: 150px;
-    animation-delay: 7s;
-}
-
-.circles li:nth-child(8){
-    left: 50%;
-    width: 25px;
-    height: 25px;
-    animation-delay: 15s;
-    animation-duration: 45s;
-}
-
-.circles li:nth-child(9){
-    left: 20%;
-    width: 15px;
-    height: 15px;
-    animation-delay: 2s;
-    animation-duration: 35s;
-}
-
-.circles li:nth-child(10){
-    left: 85%;
-    width: 150px;
-    height: 150px;
-    animation-delay: 0s;
-    animation-duration: 11s;
-}
-
-
-
-@keyframes animate {
-
-    0%{
-        transform: translateY(0) rotate(0deg);
-        opacity: 1;
-        border-radius: 0;
-    }
-
-    100%{
-        transform: translateY(-1000px) rotate(720deg);
-        opacity: 0;
-        border-radius: 50%;
-    }
-
-}
-
 .description {
     margin-top: 156px;
     color: #ffffff;
@@ -321,106 +178,19 @@ b {
 }    
     
 </style>
-
-<script>/* Set the width of the side navigation to 250px */
-function openNav() {
-  document.getElementById("mySidenav").style.width = "250px";
-  document.getElementById("dimmer").style.width = "100%";
-  document.getElementById("dimmer").style.transition = "0s";
-  document.getElementById("navClose").style.background = "#00000047";
-  document.getElementById("body").style.overflow = "hidden";
-}
-
-/* Set the width of the side navigation to 0 */
-function closeNav() {
-  document.getElementById("mySidenav").style.width = "0";
-  document.getElementById("dimmer").style.width = "0%";
-  document.getElementById("dimmer").style.transitionDelay = "0.7s";
-  document.getElementById("navClose").style.background = "#ffffff00";
-  document.getElementById("body").style.overflow = "auto";
-}
-</script>
 	</head>
-	<body id="body" style="overflow: auto;">
-<!-- Background Animation -->
-<div class="backdiv"><ul class="circles" style="
-    margin-top: 0px;
-    margin-bottom: 0px;
-    padding: 0;
-    margin-block-start: 0;
-    margin-block-end: 0;
-    margin-inline-start: 0;
-    margin-inline-end: 0;
-    padding-inline-start: 0;
-">
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-                    <li></li>
-            </ul></div>
-<!-- The Sidenav -->
-<div id="mySidenav" class="sidenav" style="width: 0px;">
-<img src="./resource/nav.png" style="
-    width: 150px;
-    padding-left: 0px;
-    margin-left: 40px;
-">
-    
-<!-- Add Navigation Contents Here. Active-navitemact, unactive-navitemdis -->  
-<a class="navitemact"><div><p>About</p></div></a>
-<a href="file:///G:/S%20r%20Project/Web/sarsamurmu.github.io/about.html#" class="navitemdis"><div><p>Contact</p></div></a>
-    
-</div>
-
+	<body id="body">
 <!-- Use any element to open the sidenav -->
 
-<div class="topbar"><button onclick="openNav()" style="border-color: gainsboro;border-style: solid;border-width: 0px;height: 29px;width: 36px;border-radius: 8px;background-color: #0079ea;"><img src="./resource/menu.svg" style="
-    width: 20px;
-    padding-top: 2px;
-"></button><text style="
+<div class="topbar"><text style="
     color: white;
     padding-left: 15px;
     font-size: 25px;
-">About<text></text></text></div>
+">Posts<text></text></text></div>
 
 
 
-<div style="
-    width: 100%;
-    top: 0;
-    left: 0;
-    height: 100%;
-    text-align: center;
-    position: absolute;
-"><img src="./resource/s.png" style="width: 300px;margin-top: 50px;">
-<div style="position: absolute;
-            left: 50%;
-            margin-left: -118px;
-            margin-top: 20px;">
-<div id="chipdown" class="chip" style="
-    width: 88px;
-    border-bottom-left-radius: 18px;
-"><text>Hello</text></div>
-
-<div id="chipup" class="chip" style="
-    font-size: 23px;
-    width: 236px;
-"><text>I'm <b>Sarsa Murmu</b></text></div></div><div style="
-    margin-top: 126px;
-    background-color: #0076e5;
-    height: 8px;
-    width: 100px;
-    border-radius: 1cm;
-    position: absolute;
-    left: 50%;
-    margin-left: -50px;
-"></div><div class="description"><text>    I'm also known as sarsa2703. I'm currently a High School Student. I love Colors and Material things. Always Available for Web Designing and Iconography, Just Contact Me.</text><br><br><text>In off-time you can find me doing Designs, Making Web. You can check them on "Portfolio" Section.</text></div></div>
+<div class="description"><text>    I'm also known as sarsa2703. I'm currently a High School Student. I love Colors and Material things. Always Available for Web Designing and Iconography, Just Contact Me.</text><br><br><text>In off-time you can find me doing Designs, Making Web. You can check them on "Portfolio" Section.</text></div></div>
 <!-- Dim the Screen When Sidebar opens --><!-- Closes Sidenav when Clicked Outside --><div id="dimmer" style="background: rgba(255, 255, 255, 0);width: 0%;transition: all 0s ease 0.7s;"><a class="closer" id="navClose" onclick="closeNav()" style="background: rgba(255, 255, 255, 0);"></a></div>
 
 </body></html>
