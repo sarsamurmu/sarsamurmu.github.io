@@ -1,6 +1,6 @@
 /* Scroll Bar Start */
 ::-webkit-scrollbar {
-    width: 6px;
+    width: 4px;
     height: 6px;
     background-color: #ffffff00;
 }
@@ -58,6 +58,7 @@ h1, h2, h3, h4 {
 
 .body {
   overflow: auto;
+  overflow-x: hidden;
   font-family: Primary;
   font-size: 20px;
   margin: 0px;
@@ -290,7 +291,7 @@ b {
 
 .projectitem > img {
     margin: 4px;
-    border-radius: 17px;
+    border-radius: 14px;
     width: 300px;
 }
 
@@ -331,7 +332,7 @@ b {
 }
 
 #resadget {
-	color: #e8801a;
+	color: #8C3EF6;
 }
 
 .getit:hover {
@@ -344,7 +345,7 @@ b {
 }
 
 #resadget:hover {
-	background-color: #e8801a;
+	background-color: #8C3EF6;
 	color: #ffffff;
 }
 
