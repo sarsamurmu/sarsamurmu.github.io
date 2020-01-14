@@ -1,0 +1,20 @@
+doctype html
+html
+  -
+    const siteData = {
+      description: `It's all about Sarsa Murmu`,
+      brandImage: `/resources/brand_logo.png`,
+      themeColor: `#1D2530`,
+      siteName: `Sarsa Murmu`,
+    }
+  
+  block var
+  head
+    title #{title}
+    meta(property='og:title' content=title)
+    include imports/head.pug
+    +head(siteData)
+    block stylesheets
+      link(rel='stylesheet' href='/stylesheets/index.css')
+  body
+    block content

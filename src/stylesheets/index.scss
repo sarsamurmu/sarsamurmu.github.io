@@ -1,0 +1,110 @@
+@import 'imports/zusty';
+
+::-webkit-scrollbar {
+  width: 4px;
+
+  &-thumb {
+    background-color: $accent1;
+    border-radius: 10px 0 0 10px;
+  }
+}
+
+.slide-container {
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  scroll-snap-type: y mandatory;
+
+  .slide {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
+    scroll-snap-align: start;
+
+    > * {
+      width: 100%;
+    }
+  }
+
+  .parallax {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 320vh;
+    width: 100vw;
+    z-index: -1;
+
+    background: radial-gradient(rgba(0, 132, 255, 0.04) 15%, transparent 16%), radial-gradient(rgba(38, 210, 167, 0.04) 15%, transparent 16%), transparent;
+    background-position: 0 0, 30px 30px;
+    background-origin: padding-box;
+    background-clip: border-box;
+    background-size: 60px 60px;
+  }
+}
+
+.font-primary {
+  font-family: 'Lexend Deca', sans-serif;
+}
+
+h2 {
+  font-family: 'Lexend Deca', sans-serif;
+  text-align: center;
+  font-size: 2rem;
+  font-weight: normal;
+}
+
+p {
+  font-family: 'Nunito', sans-serif;
+}
+
+img {
+  width: 400px;
+  margin-top: -80px;
+
+  @include small {
+    width: 80%;
+    margin-top: -100px;
+  }
+}
+
+.bio {
+  padding: 0 30px;
+  max-width: 700px;
+  font-size: 1.3rem;
+}
+
+.card {
+  width: 280px;
+
+  h3, .btn {
+    font-family: 'Lexend Deca', sans-serif;
+    font-weight: normal;
+  }
+}
+
+.btn {
+  .icon {
+    --icon-size: 1.3rem;
+  }
+
+  &.telegram {
+    color: #32afed;
+  }
+
+  &.twitter {
+    color: #1da1f2;
+  }
+
+  &.discord {
+    color: #7289DA;
+  }
+}

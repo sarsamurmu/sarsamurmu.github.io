@@ -1,0 +1,53 @@
+extends _base.pug
+block var
+  - const title = 'Sarsa Murmu'
+block content
+  .slide-container
+    .parallax
+    .slide
+      .text-center.text-pow-primary
+        img(src='/resources/logo_s_alt.png' alt='logo-of-sarsamurmu')
+        br
+        span.font-primary.text-6 Hi there, I am 
+        br
+        span.font-primary.text-7 Sarsa Murmu
+      br
+    .slide
+      h2 About me
+      p.bio.
+        I'm a self-taught web developer who is still a high school student. 
+        I like to work with web related things like HTML, CSS, JS, Node JS and 
+        other technologies related to the web but I am also keen on learning android development.
+      br
+    .slide
+      h2 Things I made
+      .container.justify-center
+        .card.landscape.hoverable
+          h3 Zusty CSS
+          p Power Packed CSS Framework for Building Beautiful Interfaces.
+          footer
+            a(href='https://zustycss.com' target='_blank' rel='noopener').btn.transparent Get it
+        .card.landscape.hoverable
+          h3 Resicon Pack
+          p A clean minimal icon pack for Android.
+          br
+          footer
+            a(href='https://play.google.com/store/apps/details?id=sarsamurmu.resiconpack.adaptive' target='_blank' rel='noopener').btn.transparent Get Flat
+            a(href='https://play.google.com/store/apps/details?id=sarsa.minmax.resiconpack' target='_blank' rel='noopener').btn.transparent Get Adaptive
+    .slide
+      h2 Find me on
+      .container.justify-center
+        a(href='https://github.com/sarsamurmu' target='_blank' rel='noopener').btn.transparent.github
+          span.icon(data-icon='github')
+        a(href='https://telegram.me/sarsamurmu' target='_blank' rel='noopener').btn.transparent.telegram
+          span.icon(data-icon='telegram')
+        a(href='https://twitter.com/sarsamurmu' target='_blank' rel='noopener').btn.transparent.twitter
+          span.icon(data-icon='twitter')
+        a(href='https://discordapp.com/channels/@me/520857452087083038' target='_blank' rel='noopener').btn.transparent.discord
+          span.icon(data-icon='discord')
+      p.font-primary.text-center Page built with Zusty CSS and #[span.icon(data-icon='heart' style='vertical-align: bottom')]
+    .slide
+      h2 See you, #[br.hidden.visible-at-small] Have a great day.
+  
+  script(src='./scripts/rellax.min.js')
+  script(src='./scripts/main.js')
