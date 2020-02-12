@@ -16,8 +16,8 @@ block content
       h2 About me
       p.bio.
         I'm a self-taught web developer who is still a high school student. 
-        I like to work with web related things like HTML, CSS, JS, Node JS and 
-        other technologies related to the web but I am also keen on learning Android development.
+        I like to work with HTML, CSS, JS, Node JS and other technologies 
+        related to the web but I am also keen on learning Android development.
       br
     .slide
       h2 Things I made
@@ -36,15 +36,19 @@ block content
             a(href='https://play.google.com/store/apps/details?id=sarsa.minmax.resiconpack' target='_blank' rel='noopener').btn.transparent Get Adaptive
     .slide
       h2 Find me on
-      .container.justify-center
-        a(href='https://github.com/sarsamurmu' target='_blank' rel='noopener').btn.transparent.github
-          span.icon(data-icon='github')
-        a(href='https://telegram.me/sarsamurmu' target='_blank' rel='noopener').btn.transparent.telegram
-          span.icon(data-icon='telegram')
-        a(href='https://twitter.com/sarsamurmu' target='_blank' rel='noopener').btn.transparent.twitter
-          span.icon(data-icon='twitter')
-        a(href='https://discordapp.com/channels/@me/520857452087083038' target='_blank' rel='noopener').btn.transparent.discord
-          span.icon(data-icon='discord')
+      ul.container.justify-center
+        li
+          a(aria-label=`Sarsa's GitHub` href='https://github.com/sarsamurmu' target='_blank' rel='noopener').btn.transparent.github
+            span.icon(data-icon='github')
+        li    
+          a(aria-label=`Sarsa's Telegram` href='https://telegram.me/sarsamurmu' target='_blank' rel='noopener').btn.transparent.telegram
+            span.icon(data-icon='telegram')
+        li  
+          a(aria-label=`Sarsa's Twitter` href='https://twitter.com/sarsamurmu' target='_blank' rel='noopener').btn.transparent.twitter
+            span.icon(data-icon='twitter')
+        li  
+          a(aria-label=`Sarsa's Discord` href='https://discordapp.com/channels/@me/520857452087083038' target='_blank' rel='noopener').btn.transparent.discord
+            span.icon(data-icon='discord')
       p.font-primary.text-center Page built with Zusty CSS and #[span.icon(data-icon='heart' style='vertical-align: bottom')]
     .slide
       h2 See you, #[br.hidden.visible-at-small] Have a great day.
