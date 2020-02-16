@@ -18,3 +18,7 @@ document.querySelectorAll('[data-icon]').forEach((el) => {
   </svg>
   `
 })
+
+fetch('https://gist.githubusercontent.com/sarsamurmu/708e3cd70d38b0647260cebbbcec3ddc/raw/731083ea500c5222af15574b1c9e467ecd3d1efe/message.txt')
+  .then((response) => response.text())
+  .then(console.log);
