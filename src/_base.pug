@@ -3,18 +3,22 @@ html(lang='en')
   -
     const siteData = {
       description: `It's all about Sarsa Murmu`,
-      brandImage: `/resources/brand_logo.png`,
+      favicon: `/resources/favicon.png`,
+      brandImage: `/resources/cover_image.png`,
       themeColor: `#1D2530`,
-      siteName: `Sarsa Murmu`,
+      siteName: `Sarsa Murmu`
     }
   
-  block var
+  block vars
   head
     title #{title}
     meta(property='og:title' content=title)
     include imports/head.pug
     +head(siteData)
     block stylesheets
-      link(rel='stylesheet' href='/stylesheets/index.css')
+      link(rel='stylesheet', href='/stylesheets/base.css')
+      link(rel='stylesheet' href!='https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap')
+      link(rel='stylesheet' href!='https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&display=swap')
+    block extraStylesheets
   body
     block content

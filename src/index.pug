@@ -1,57 +1,79 @@
 extends _base.pug
-block var
+block vars
   - const title = 'Sarsa Murmu'
+block extraStylesheets
+  link(rel='stylesheet' href='/stylesheets/index.css')
 block content
-  .slide-container
-    .parallax
-    .slide
-      .text-center.text-pow-primary
-        img(src='/resources/logo_s_alt.png' alt='Logo of Sarsa Murmu')
-        br
-        span.font-primary.text-6 Hi there, I am 
-        br
-        span.font-primary.text-7 Sarsa Murmu
+  .hero
+    .shapes
+      each i of Array(3)
+        span
+    .info
+      span Hi there, I am
+      span
+        each i of Array(4)
+          span
+        span.name Sarsa Murmu
+      .links
+        p Find me on
+        ul
+          -
+            const links = [
+              {
+                icon: 'github',
+                url: 'https://github.com/sarsamurmu',
+                label: 'My GitHub Profile'
+              },
+              {
+                icon: 'twitter',
+                url: 'https://twitter.com/sarsamurmu',
+                label: 'My Twitter Profile'
+              },
+              {
+                icon: 'discord',
+                url: 'https://discordapp.com/channels/@me/520857452087083038',
+                label: 'My Discord Profile'
+              },
+              {
+                icon: 'telegram',
+                url: 'https://telegram.me/sarsamurmu',
+                label: 'My Telegram Profile'
+              }
+            ];
+          
+          each link in links
+            li: a(
+                aria-label=link.label
+                href=link.url
+                target='_blank'
+                rel='noopener'
+              ): i(data-icon=link.icon)
+  .main-body
+    .block
+      h1 Who am I?
+      p.
+        I am a high school student and a self taught web developer. I like to code.
+    .block
+      h1 I can work with
+      ul
+        li HTML
+        li CSS
+        li JavaScript
+        li TypeScript
+        li Node JS
+        li Dart
+        li Java
+  .block
+    div(style='margin: 10rem')
+    h1.center That's all for now.
+    br
+    h1.center
+      | See you,
       br
-    .slide
-      h2 About me
-      p.bio.
-        I'm a self-taught web developer who is still a high school student. 
-        I like to work with HTML, CSS, JS, Node JS and other technologies 
-        related to the web but I am also keen on learning Android development.
-      br
-    .slide
-      h2 Things I made
-      .container.justify-center
-        .card.landscape.hoverable
-          h3 Zusty CSS
-          p Power Packed CSS Framework for Building Beautiful Interfaces.
-          footer
-            a(href='https://zustycss.com' target='_blank' rel='noopener').btn.transparent Get it
-        .card.landscape.hoverable
-          h3 Resicon Pack
-          p A clean minimal icon pack for Android.
-          br
-          footer
-            a(href='https://play.google.com/store/apps/details?id=sarsamurmu.resiconpack.adaptive' target='_blank' rel='noopener').btn.transparent Get Flat
-            a(href='https://play.google.com/store/apps/details?id=sarsa.minmax.resiconpack' target='_blank' rel='noopener').btn.transparent Get Adaptive
-    .slide
-      h2 Find me on
-      ul.container.justify-center
-        li
-          a(aria-label=`Sarsa's GitHub` href='https://github.com/sarsamurmu' target='_blank' rel='noopener').btn.transparent.github
-            span.icon(data-icon='github')
-        li    
-          a(aria-label=`Sarsa's Telegram` href='https://telegram.me/sarsamurmu' target='_blank' rel='noopener').btn.transparent.telegram
-            span.icon(data-icon='telegram')
-        li  
-          a(aria-label=`Sarsa's Twitter` href='https://twitter.com/sarsamurmu' target='_blank' rel='noopener').btn.transparent.twitter
-            span.icon(data-icon='twitter')
-        li  
-          a(aria-label=`Sarsa's Discord` href='https://discordapp.com/channels/@me/520857452087083038' target='_blank' rel='noopener').btn.transparent.discord
-            span.icon(data-icon='discord')
-      p.font-primary.text-center Page built with Zusty CSS and #[span.icon(data-icon='heart' style='vertical-align: bottom')]
-    .slide
-      h2 See you, #[br.hidden.visible-at-small] Have a great day.
+      | Have a great day!
+    div(style='margin: 10rem')
+  .what-the-heck-overlay(aria-hidden='true')
+    p I won't let you see the messed up version of my page 😤
+    p Maybe you are a developer?
   
-  script(src='./scripts/rellax.min.js')
-  script(src='./scripts/main.js')
+  script(src='/scripts/main.js')

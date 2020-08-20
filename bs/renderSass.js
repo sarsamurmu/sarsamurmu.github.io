@@ -9,15 +9,16 @@ const args = process.argv.splice(2, process.argv.length - 2);
 
 const sassPath = `./src/stylesheets/*.scss`;
 const sassImportPath = './src/stylesheets/imports/';
+const watchFiles = args.includes('-w');
 
-const renderFile = (filePath) => {
+const renderFile = (filePath, retry) => {
   const outputPath = path.join('stylesheets', path.basename(filePath).replace('.scss', '.css'));
 
   try {
     const result = sass.renderSync({
       file: filePath,
-      outputStyle: 'compressed',
-      includePaths: ['./../zusty/scss']
+      outputStyle: watchFiles ? 'expanded' : 'compressed',
+      sourceMap: watchFiles
     });
 
     fs.mkdirSync(path.dirname(outputPath), {
@@ -28,12 +29,15 @@ const renderFile = (filePath) => {
 
     console.log(chalk.green(`Rendered ${filePath} to ${outputPath}\n`));
   } catch (err) {
-    console.log(chalk.red(err.formatted))
+    if (retry && err.message.includes('unreadable')) {
+      return setTimeout(() => renderFile(filePath), 200);
+    }
+    console.log(chalk.red(err.formatted));
   }
 }
 
-if (args.includes('-w')) {
-  chokidar.watch(sassPath).on('change', renderFile).on('ready', () => console.log(chalk.magenta(`Watching Sass files for change\n`)));
+if (watchFiles) {
+  chokidar.watch(sassPath).on('change', (filePath) => renderFile(filePath, true)).on('ready', () => console.log(chalk.magenta(`Watching Sass files for change\n`)));
 
   chokidar.watch(sassImportPath).on('change', (filePath) => {
     console.log(chalk.blue(`Import changed ${filePath}\n`));
