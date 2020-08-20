@@ -22,7 +22,7 @@ const renderFile = (filePath) => {
   const canonical = outputPath
     .replace(/\\/g, '/')
     .replace(/\.html$/, '')
-    .replace(/(\.[\\/])/g, 'https://sarsamurmu.github.io')
+    .replace(/(\.[\\/])/g, 'https://sarsamurmu.github.io/')
     .replace(/\/index$/, '');
 
   if (!fs.existsSync(path.dirname(outputPath))) fs.mkdirSync(path.dirname(outputPath), { recursive: true });
