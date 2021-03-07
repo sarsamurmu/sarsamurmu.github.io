@@ -230,19 +230,6 @@ body {
           width: 1.5rem;
           color: currentColor;
         }
-
-        $iconColors: (
-          'twitter': rgb(29, 161, 242),
-          'discord': rgb(114, 137, 218),
-          'telegram': rgb(50, 175, 237),
-          'github': #24292e
-        );
-
-        @each $name, $color in $iconColors {
-          [data-icon=#{$name}] {
-            color: $color;
-          }
-        }
       }
     }
   }

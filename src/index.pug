@@ -41,13 +41,14 @@ block body
               }
             ];
           
+          include _icons.pug
           each link in links
             li: a(
                 aria-label=link.label
                 href=link.url
                 target='_blank'
                 rel='noopener'
-              ): i(data-icon=link.icon)
+              ): +icon(link.icon)
   .main-body
     .block
       h1 Who am I?
@@ -72,5 +73,3 @@ block body
   .what-the-heck-overlay(aria-hidden='true')
     p I won't let you see the messed up version of my page 😤
     p Maybe you are a developer?
-  
-  script(src='/scripts/main.js')
