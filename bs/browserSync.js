@@ -32,7 +32,7 @@ browserSync.init({
         res.writeHead(404, {
           'Content-Type': 'text/html'
         });
-        res.write(fs.readFileSync(path.join(__dirname, './build/404.html')));
+        res.write(fs.readFileSync(path.join(__dirname, '../build/404.html')));
         res.end();
       });
     }

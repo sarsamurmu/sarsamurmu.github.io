@@ -2,6 +2,7 @@
 const fs = require('fs');
 const path = require('path');
 const glob = require('glob');
+const chalk = require('chalk');
 
 glob.sync('./src/{scripts,resources}/**/*', {
   cwd: path.resolve(__dirname, '..')
@@ -14,4 +15,6 @@ glob.sync('./src/{scripts,resources}/**/*', {
   }
 
   fs.copyFileSync(filePath, outputPath);
+
+  console.log(chalk`{green Copied: {cyan "${filePath}" -> "${outputPath}"}}`)
 });

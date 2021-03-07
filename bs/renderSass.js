@@ -12,6 +12,7 @@ const rootDir = path.resolve(__dirname, '..');
 const filePathsGlob = './src/stylesheets/*.scss';
 const importPathsGlob = './src/stylesheets/imports/';
 const shouldWatch = args.includes('-w');
+const line = '-'.repeat(process.stdout.columns);
 
 /**
  * @param {string} filePath
@@ -35,12 +36,12 @@ const renderFile = (filePath, retry) => {
 
     fs.writeFileSync(outputPath, result.css.toString());
 
-    console.log(chalk.green(`Rendered ${filePath} to ${outputPath}\n`));
-  } catch (err) {
-    if (retry && err.message.includes('unreadable')) {
+    console.log(chalk`{green Rendered file: {cyan "${filePath}" -> "${outputPath}"}}`);
+  } catch (e) {
+    if (retry && e.message.includes('unreadable')) {
       return setTimeout(() => renderFile(filePath), 200);
     }
-    console.log(chalk.red(err.formatted));
+    console.log(chalk.red(`${line}\n${e.formatted}\n${line}`));
   }
 }
 
@@ -57,12 +58,12 @@ if (shouldWatch) {
     cwd: rootDir
   })
   .on('change', (filePath) => renderFile(filePath, true))
-  .on('ready', () => console.log(chalk.magenta(`Watching Sass files for change\n`)));
+  .on('ready', () => console.log(chalk.magenta(`Watching Sass files for change`)));
 
   watch(importPathsGlob, {
     cwd: rootDir
   }).on('change', (filePath) => {
-    console.log(chalk.blue(`Import changed ${filePath}\n`));
+    console.log(chalk.blue(`Import changed ${filePath}`));
     renderAll();
   });
 }

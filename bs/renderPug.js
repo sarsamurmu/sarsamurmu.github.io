@@ -13,6 +13,7 @@ const rootDir = path.resolve(__dirname, '..');
 const filePathsGlob = './src/**/*.pug';
 const importPathsGlob = './src/**/_*.pug';
 const shouldWatch = args.includes('-w');
+const line = '-'.repeat(process.stdout.columns);
 
 /** @param {string} filePath */
 const renderFile = (filePath) => {
@@ -31,18 +32,24 @@ const renderFile = (filePath) => {
     fs.mkdirSync(path.dirname(outputPath), { recursive: true });
   }
 
-  let compiled = pug.compileFile(filePath)({ canonical });
-  if (!shouldWatch) {
-    // TODO: OPEN IT
-    // compiled = minify(compiled, {
-    //   minifyJS: true,
-    //   minifyCSS: true
-    // });
+  try {
+    let compiled = pug.compileFile(filePath)({ canonical });
+    if (!shouldWatch) {
+      compiled = minify(compiled, {
+        minifyJS: true,
+        minifyCSS: true
+      });
+    }
+    fs.writeFileSync(outputPath, compiled);
+    console.log(chalk`{green Rendered file: {cyan "${filePath}" -> "${outputPath}"}}`);
+  } catch (e) {
+    if (shouldWatch) {
+      fs.writeFileSync(outputPath, '');
+      console.log(chalk.red(`${line}\nError while rendering "${filePath}"\n\n${e.message}\n${line}`));
+    } else {
+      throw e;
+    }
   }
-
-  fs.writeFileSync(outputPath, compiled);
-
-  console.log(chalk.green(`Rendered ${filePath} to ${outputPath}\n`));
 }
 
 const renderAll = () => {
@@ -60,12 +67,12 @@ if (shouldWatch) {
     cwd: rootDir
   })
   .on('change', renderFile)
-  .on('ready', () => console.log(chalk.magenta(`Watching Pug files for change\n`)));
+  .on('ready', () => console.log(chalk.magenta(`Watching Pug files for change`)));
 
   watch(importPathsGlob, {
     cwd: rootDir
   }).on('change', (filePath) => {
-    console.log(chalk.blue(`Import changed ${filePath}\n`));
+    console.log(chalk.blue(`Import changed: "${filePath}"`));
     renderAll();
   });
 }
