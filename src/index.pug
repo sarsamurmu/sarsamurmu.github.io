@@ -1,9 +1,9 @@
 extends _base.pug
-block vars
+prepend head
   - const title = 'Sarsa Murmu'
-block extraStylesheets
+append head
   link(rel='stylesheet' href='/stylesheets/index.css')
-block content
+block body
   .hero
     .shapes
       each i of Array(3)

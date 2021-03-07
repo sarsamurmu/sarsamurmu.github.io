@@ -1,29 +1,48 @@
+// @ts-check
 const fs = require('fs');
 const path = require('path');
-const chokidar = require('chokidar');
+const { watch } = require('chokidar');
 const browserSync = require('browser-sync');
 
 browserSync.init({
   server: {
-    baseDir: '.',
+    baseDir: path.join(__dirname, '../build'),
     serveStaticOptions: {
       extensions: ['html']
     }
   },
+  middleware: [
+    (req, res, next) => {
+      if (
+        /\/(scripts|resources)/.test(req.url)
+      ) {
+        const absoluteFilePath = path.join(__dirname, '../src/', req.url);
+        if (fs.existsSync(absoluteFilePath)) {
+          fs.createReadStream(absoluteFilePath).pipe(res);
+          return;
+        }
+      }
+      next();
+    }
+  ],
+  // @ts-expect-error
   callbacks: {
-    ready: (err, bs) => {
-      bs.addMiddleware('*', (req, res) => {
+    ready: (_, bs) => {
+      bs.addMiddleware('*', (_, res) => {
         res.writeHead(404, {
           'Content-Type': 'text/html'
         });
-        res.write(fs.readFileSync('404.html'));
-        res.end()
-      })
+        res.write(fs.readFileSync(path.join(__dirname, './build/404.html')));
+        res.end();
+      });
     }
   }
 });
 
-browserSync.watch('.').on('change', (filePath) => {
-  const extname = path.extname(filePath).replace('.', '');
-  if (['css', 'js', 'html'].includes(extname)) browserSync.reload(extname);
-});
+watch([
+  './build/**/*',
+  './src/{scripts,resources}/**/*'
+], {
+  cwd: path.resolve(__dirname, '..')
+})
+.on('change', (file) => browserSync.reload(file));

@@ -9,16 +9,12 @@ html(lang='en')
       siteName: `Sarsa Murmu`
     }
   
-  block vars
-  head
+  head: block head
     title #{title}
     meta(property='og:title' content=title)
-    include imports/head.pug
+    include _head.pug
     +head(siteData)
-    block stylesheets
-      link(rel='stylesheet', href='/stylesheets/base.css')
-      link(rel='stylesheet' href!='https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap')
-      link(rel='stylesheet' href!='https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&display=swap')
-    block extraStylesheets
-  body
-    block content
+    link(rel='stylesheet', href='/stylesheets/base.css')
+    link(rel='stylesheet' href!='https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap')
+    link(rel='stylesheet' href!='https://fonts.googleapis.com/css2?family=Fira+Code:wght@500&display=swap')
+  body: block body

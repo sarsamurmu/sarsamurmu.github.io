@@ -1,24 +1,32 @@
+// @ts-check
 const fs = require('fs');
 const path = require('path');
 const glob = require('glob');
-const chokidar = require('chokidar');
+const { watch } = require('chokidar');
 const chalk = require('chalk');
 
 const sass = require('node-sass');
 const args = process.argv.splice(2, process.argv.length - 2);
 
-const sassPath = `./src/stylesheets/*.scss`;
-const sassImportPath = './src/stylesheets/imports/';
-const watchFiles = args.includes('-w');
+const rootDir = path.resolve(__dirname, '..');
+const filePathsGlob = './src/stylesheets/*.scss';
+const importPathsGlob = './src/stylesheets/imports/';
+const shouldWatch = args.includes('-w');
 
+/**
+ * @param {string} filePath
+ * @param {boolean} [retry]
+ */
 const renderFile = (filePath, retry) => {
-  const outputPath = path.join('stylesheets', path.basename(filePath).replace('.scss', '.css'));
+  const outputPath = filePath
+    .replace(/src([\\/])/, 'build$1')
+    .replace(/\.scss$/, '.css');
 
   try {
     const result = sass.renderSync({
       file: filePath,
-      outputStyle: watchFiles ? 'expanded' : 'compressed',
-      sourceMap: watchFiles
+      outputStyle: shouldWatch ? 'expanded' : 'compressed',
+      sourceMap: shouldWatch
     });
 
     fs.mkdirSync(path.dirname(outputPath), {
@@ -36,14 +44,25 @@ const renderFile = (filePath, retry) => {
   }
 }
 
-if (watchFiles) {
-  chokidar.watch(sassPath).on('change', (filePath) => renderFile(filePath, true)).on('ready', () => console.log(chalk.magenta(`Watching Sass files for change\n`)));
+const renderAll = () => {
+  glob.sync(filePathsGlob, {
+    cwd: rootDir
+  }).forEach((file) => renderFile(file));
+}
 
-  chokidar.watch(sassImportPath).on('change', (filePath) => {
-    console.log(chalk.blue(`Import changed ${filePath}\n`));
+renderAll();
 
-    glob.sync(sassPath).forEach(renderFile);
+if (shouldWatch) {
+  watch(filePathsGlob, {
+    cwd: rootDir
   })
-} else {
-  glob.sync(sassPath).forEach(renderFile);
+  .on('change', (filePath) => renderFile(filePath, true))
+  .on('ready', () => console.log(chalk.magenta(`Watching Sass files for change\n`)));
+
+  watch(importPathsGlob, {
+    cwd: rootDir
+  }).on('change', (filePath) => {
+    console.log(chalk.blue(`Import changed ${filePath}\n`));
+    renderAll();
+  });
 }
