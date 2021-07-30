@@ -1,4 +1,4 @@
-extends _base.pug
+extends _base
 prepend head
   - const title = 'Sarsa Murmu'
 append head
@@ -41,7 +41,7 @@ block body
               }
             ];
           
-          include _icons.pug
+          include _icons
           each link in links
             li: a(
                 aria-label=link.label
@@ -49,20 +49,20 @@ block body
                 target='_blank'
                 rel='noopener'
               ): +icon(link.icon)
-  .main-body
-    .block
-      h1 Who am I?
-      p.
-        I am a high school student and a web dev. I like to make projects.
-    .block
-      h1 I can work with
-      ul
-        li HTML
-        li CSS
-        li JavaScript
-        li TypeScript
-        li Node JS
-        li Java
+  //- .main-body
+  //-   .block
+  //-     h1 Who am I?
+  //-     p.
+  //-       I am a high school student and a web dev. I like to make projects.
+  //-   .block
+  //-     h1 I can work with
+  //-     ul
+  //-       li HTML
+  //-       li CSS
+  //-       li JavaScript
+  //-       li TypeScript
+  //-       li Node JS
+  //-       li Java
   .block
     div(style='margin: 10rem')
     h1.center That's all for now.
