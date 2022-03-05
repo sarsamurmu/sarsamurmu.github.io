@@ -4,6 +4,7 @@ prepend head
     const title = 'Privacy Policy - Sarsa Murmu'
     siteData.siteName = title
     siteData.description = `Privacy Policy for ${appName}`
+  meta(name='robots' content='noindex')
 append head
   link(rel='stylesheet' href='/stylesheets/privacy-policy.css')
   link(rel='stylesheet' href!='https://fonts.googleapis.com/css2?family=Nunito&display=swap')
