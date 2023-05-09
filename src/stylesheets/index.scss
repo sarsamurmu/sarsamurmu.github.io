@@ -154,6 +154,10 @@ body {
         background-color: nth($colors, -1);
       }
 
+      > span.name {
+        white-space: nowrap;
+      }
+
       > span:not(.name) {
         width: calc(100% + #{$extra});
         position: absolute;
@@ -167,6 +171,8 @@ body {
           animation-timing-function: cubic-bezier(0.73, -0.01, 0.14, 0.99);
         }
       }
+
+
 
       @for $i from 1 through length($colors) {
         $odd: ($i % 2) == 0;
