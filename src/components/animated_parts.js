@@ -197,7 +197,7 @@ export const ZigZag = () => {
       duration: 1
     })
 
-    am.bind('bind', tl)
+    am.bind('particle', tl)
   }, { dependencies: [am.current], revertOnUpdate: true })
 
   return (
