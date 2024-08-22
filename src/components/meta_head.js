@@ -1,5 +1,6 @@
 import coverImg from '/assets/cover_image.png'
 import faviconImg from '/assets/favicon.png'
+import Head from 'next/head'
 
 export const MetaHead = () => {
   const description = `Sarsa's website`
@@ -9,7 +10,7 @@ export const MetaHead = () => {
   const favicon = faviconImg.src
 
   return (
-    <>
+    <Head>
       <title>{siteName}</title>
       <meta http-equiv='Content-Type' content='text/html; charset=UTF-8' />
       <meta name='mobile-web-app-capable' content='yes' />
@@ -40,6 +41,6 @@ export const MetaHead = () => {
       <link rel='apple-touch-icon-precomposed' href={favicon} />
       <meta name='msapplication-TileImage' content={favicon} />
       <link rel='icon' href={favicon} sizes='192x192' type='image/png' />
-    </>
+    </Head>
   )
 }

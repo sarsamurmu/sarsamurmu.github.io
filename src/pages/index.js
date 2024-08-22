@@ -9,9 +9,8 @@ import { MetaHead } from '@/components/meta_head'
 export default function Home() {
   return (
     <>
+      <MetaHead />
       <Head>
-        <MetaHead />
-
         <style>{`
           body, html {
             background-color: #1a1a1a;
