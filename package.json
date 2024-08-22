@@ -1,29 +1,19 @@
 {
+  "name": "website",
+  "version": "0.1.0",
   "private": true,
-  "name": "my-website",
-  "version": "2.0.0",
-  "description": "My very personal website :D",
-  "main": "index.html",
   "scripts": {
-    "start": "concurrently \"npm:watch:*\"",
-    "build": "npm run render:sass && npm run render:pug && npm run copy-files",
-    "copy-files": "node bs/copyFiles",
-    "watch:sass": "node bs/renderSass -w",
-    "watch:pug": "node bs/renderPug -w",
-    "render:sass": "node bs/renderSass",
-    "render:pug": "node bs/renderPug",
-    "serve": "node bs/browserSync"
+    "dev": "next dev -H 192.168.0.105",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
-  "author": "Sarsa Murmu <sarsamurmu05@gmail.com>",
-  "license": "CC BY-SA 4.0",
   "dependencies": {
-    "browser-sync": "^2.29.1",
-    "chalk": "^4.1.2",
-    "chokidar": "^3.5.3",
-    "concurrently": "^8.0.1",
-    "glob": "^10.2.2",
-    "html-minifier": "^4.0.0",
-    "node-sass": "^7.0.0",
-    "pug": "^3.0.2"
+    "@gsap/react": "^2.1.1",
+    "gsap": "^3.12.5",
+    "next": "14.2.5",
+    "react": "^18",
+    "react-dom": "^18",
+    "sass": "^1.77.8"
   }
 }
