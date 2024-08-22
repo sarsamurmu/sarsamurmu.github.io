@@ -1,5 +1,5 @@
-import coverImg from '/public/cover_image.png'
-import faviconImg from '/public/favicon.png'
+import coverImg from '/assets/cover_image.png'
+import faviconImg from '/assets/favicon.png'
 
 export const MetaHead = () => {
   const description = `Sarsa's website`

@@ -7,9 +7,9 @@ import { useCallback, useContext, useRef } from 'react'
 import { AnimCtx } from './animation_manager'
 import Image from 'next/image'
 import { Sora, Inter } from 'next/font/google'
-import leaf_svg from '/public/leaf.svg'
-import leaf2_svg from '/public/leaf_2.svg'
-import hey_svg from '/public/hey.svg'
+import leaf_svg from '/assets/leaf.svg'
+import leaf2_svg from '/assets/leaf_2.svg'
+import hey_svg from '/assets/hey.svg'
 
 export const BallAnimation = () => {
   const ballSize = 20

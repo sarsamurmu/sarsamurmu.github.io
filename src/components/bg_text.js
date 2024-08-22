@@ -1,7 +1,7 @@
 import s from '@/styles/home.module.scss'
 import Image from 'next/image';
-import fight_fill from '/public/fight_fill.svg'
-import fight_outline from '/public/fight_outline.svg'
+import fight_fill from '/assets/fight_fill.svg'
+import fight_outline from '/assets/fight_outline.svg'
 
 export const BGText = () => {
   const len = 20
