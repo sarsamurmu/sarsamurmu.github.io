@@ -452,7 +452,7 @@ export const Connect = () => {
       <ul className={s.connectList}>
         {[
           ['GitHub', 'https://github.com/sarsamurmu'],
-          ['X', 'https://x.com/sarsamurmu'],
+          ['X {Twitter}', 'https://x.com/sarsamurmu'],
           ['Telegram', 'https://telegram.me/sarsamurmu'],
           ['Discord', 'https://discordapp.com/users/520857452087083038']
         ].map(([name, link]) => (
