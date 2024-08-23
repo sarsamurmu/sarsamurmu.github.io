@@ -1,4 +1,5 @@
-import Head from "next/head";
+import Head from 'next/head';
+import { GoogleAnalytics } from '@next/third-parties/google'
 import { NameLogo, WelcomeText, BallAnimation, Leaves, About, Connect, GoodBye } from '@/components/animated_parts';
 import s from '@/styles/home.module.scss'
 import { BGText } from '@/components/bg_text';
@@ -17,6 +18,9 @@ export default function Home() {
           }
         `}</style>
       </Head>
+
+      <GoogleAnalytics gaId='G-L102NQY8NS' />
+
       <AnimManager>
         <BGText />
         <ScrollProgress />
