@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import { GoogleAnalytics } from '@next/third-parties/google'
+import Script from 'next/script'
 import { NameLogo, WelcomeText, BallAnimation, Leaves, About, Connect, GoodBye } from '@/components/animated_parts';
 import s from '@/styles/home.module.scss'
 import { BGText } from '@/components/bg_text';
@@ -19,7 +19,10 @@ export default function Home() {
         `}</style>
       </Head>
 
-      <GoogleAnalytics gaId='G-L102NQY8NS' />
+      <Script
+        defer
+        data-cf-beacon='{"token": "7fe33cbce8de46c7b6774063f5212122"}'
+        src='https://static.cloudflareinsights.com/beacon.min.js' />
 
       <AnimManager>
         <BGText />
