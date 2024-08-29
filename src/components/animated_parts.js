@@ -11,6 +11,8 @@ import leaf_svg from '/assets/leaf.svg'
 import leaf2_svg from '/assets/leaf_2.svg'
 import hey_svg from '/assets/hey.svg'
 
+// ScrollTrigger.defaults({ markers: true })
+
 export const BallAnimation = () => {
   const ballSize = 20
   const am = useContext(AnimCtx)
@@ -18,7 +20,7 @@ export const BallAnimation = () => {
 
   useGSAP(() => {
     const el = ref.current
-    const size = Math.max(window?.innerWidth ?? 0, window?.innerHeight ?? 0)
+    const getScale = () => Math.max(window?.innerWidth ?? 0, window?.innerHeight ?? 0) / 20 * 1.5
 
     const tl = gsap.timeline({
       defaults: {
@@ -44,10 +46,18 @@ export const BallAnimation = () => {
       duration: 2
     }, '<')
     .to(el, { opacity: 1, duration: 0.5 }, '<')
-    .to(el, { scale: size / 20 * 1.5, duration: 3 }, '>0.7')
+    .to(el, { scale: getScale(), duration: 3 }, '>0.7')
     .to(el, { x: 0, y: 0, xPercent: -50, yPercent: -50, top: '50%', left: '50%' }, '<1')
 
     am.bind('ball', tl)
+
+    const resizeListener = () => {
+      gsap.set(el, { scale: getScale() })
+    }
+
+    window.addEventListener('resize', resizeListener)
+
+    return () => window.removeEventListener('resize', resizeListener)
   }, [am.current])
 
   return (
@@ -310,7 +320,7 @@ export const About = () => {
     gsap.timeline({
       scrollTrigger: {
         start: 500,
-        end: 500,
+        end: 501,
         toggleActions: 'play none none reverse',
         onEnter() {
           gsap.to(`.${s.scrollHint}`, { opacity: 0, display: 'none' })
@@ -325,9 +335,8 @@ export const About = () => {
     .to(el, { x: 60, opacity: 0, display: 'none' })
     .to({}, { duration: 1.5 })
     
-    const hintEnterTl = gsap
-      .timeline({ paused: true })
-      .fromTo(`.${s.scrollHint}`, { y: -10, opacity: 0 }, { y: 0, opacity: 1, delay: 2 })
+    const hintEnterTl = gsap.timeline({ paused: true })
+    .fromTo(`.${s.scrollHint}`, { y: -10, opacity: 0 }, { y: 0, opacity: 1, delay: 2 })
 
     am.bind('particle', hintEnterTl)
   }, { scope: ref, dependencies: [am.current] })
@@ -344,7 +353,7 @@ export const About = () => {
       </FadeIn>
       <ZigZag />
       <br />
-      <div className={s.scrollHint} style={{ opacity: 0 }}>
+      <div className={s.scrollHint} style={{ opacity: 0 }} onClick={() => window.scrollTo({ top: 610 })}>
         <span className={inter.className}>{'->'}</span>
         Keep scrolling
       </div>
@@ -401,7 +410,7 @@ export const Connect = () => {
     const enterCallback = createCallback(enterTl, leaveTl)
     const leaveCallback = createCallback(leaveTl, enterTl)
     ScrollTrigger.create({
-      start: 500,
+      start: 501,
       end: 1300,
       onEnter: enterCallback,
       onEnterBack: enterCallback,
@@ -485,7 +494,7 @@ export const GoodBye = () => {
 
     gsap.timeline({
       scrollTrigger: {
-        start: 1300,
+        start: 1300-2,
         end: 3000,
         toggleActions: 'play none none reverse',
         onEnter: () => handTl.play(),
