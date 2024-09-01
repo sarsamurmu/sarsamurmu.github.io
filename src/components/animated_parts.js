@@ -134,7 +134,10 @@ export const NameLogo = () => {
       const colors = [
         ['#FFF900', '#009AFF'],
         ['#F500FF', '#0F00FF'],
-        ['#00FCFF', '#007D09']
+        ['#00FCFF', '#007D09'],
+        ['#59FF00', '#393939'],
+        ['#FF9E00', '#771BFF'],
+        ['#0082FF', '#5BFBFF']
       ]
       const tl2 = gsap.timeline({ repeat: -1, yoyo: true, delay: tl.duration(), defaults: { duration: 2 } })
       colors.forEach(([bg, fg], idx) => {
