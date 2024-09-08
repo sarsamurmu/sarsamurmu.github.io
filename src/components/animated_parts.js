@@ -6,7 +6,7 @@ import { ScrollTrigger } from 'gsap/dist/ScrollTrigger'
 import { useCallback, useContext, useRef } from 'react'
 import { AnimCtx } from './animation_manager'
 import Image from 'next/image'
-import { Sora, Inter } from 'next/font/google'
+import { DM_Mono, Inter } from 'next/font/google'
 import leaf_svg from '/assets/leaf.svg'
 import leaf2_svg from '/assets/leaf_2.svg'
 import hey_svg from '/assets/hey.svg'
@@ -306,7 +306,7 @@ export const FadeIn = ({ children }) => {
   )
 }
 
-const sora = Sora({ subsets: ['latin'], display: 'block' })
+const dm_mono = DM_Mono({ subsets: ['latin'], display: 'block', weight: '400' })
 const inter = Inter({ subsets: ['latin'], display: 'block' })
 
 export const About = () => {
@@ -345,7 +345,7 @@ export const About = () => {
   }, { scope: ref, dependencies: [am.current] })
 
   return (
-    <div ref={ref} className={sora.className}>
+    <div ref={ref} className={dm_mono.className}>
       <Cross />
       <FadeIn>
         <p style={{ marginTop: 30 }}>
@@ -450,7 +450,7 @@ export const Connect = () => {
   })
 
   return (
-    <div ref={ref} style={{ display: 'none' }} className={sora.className}>
+    <div ref={ref} style={{ display: 'none' }} className={dm_mono.className}>
       <div style={{
         overflow: 'hidden',
         display: 'flex',
@@ -515,7 +515,7 @@ export const GoodBye = () => {
 
   return (
     <div className={s.goodBye} ref={ref} style={{ opacity: 0, display: 'none' }}>
-      <p className={sora.className}>
+      <p className={dm_mono.className}>
         That's all for now.<br />
         See you later
         <span style={{ paddingLeft: 6 }}>👋</span>
