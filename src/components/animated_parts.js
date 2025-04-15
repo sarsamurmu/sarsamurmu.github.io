@@ -349,7 +349,7 @@ export const About = () => {
       <Cross />
       <FadeIn>
         <p style={{ marginTop: 30 }}>
-          Hello, I am Sarsa Murmu, a 19 years old student who does programming sometimes.
+          Hello, I am Sarsa Murmu, a 20 years old student who does programming sometimes.
           If you've come here then you most probably know who I am and what I do.
           Check out my GitHub and social networking sites for more.
         </p>
