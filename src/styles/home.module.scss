@@ -1,4 +1,4 @@
-@import './mixins.scss';
+@use './mixins.scss';
 
 .content {
   font-family: Sora, sans-serif;
@@ -9,7 +9,7 @@
   width: 100%;
   height: 100%;
 
-  @include small {
+  @include mixins.small {
     margin-top: 0px;
     // $margin: 0px;
     // padding-left: $margin;
@@ -26,7 +26,7 @@
     left: 0;
     right: 0;
 
-    @include small {
+    @include mixins.small {
       margin-top: 0px;
     }
   }
@@ -43,7 +43,7 @@
   align-items: baseline;
   justify-content: center;
 
-  @include small {
+  @include mixins.small {
     top: 100px;
     left: 50%;
     transform: translateX(-50%);
@@ -66,7 +66,7 @@
     height: auto;
   }
 
-  @include small {
+  @include mixins.small {
     transform: translate(-50%, -50%);
 
     img {

@@ -1,5 +1,5 @@
-import coverImg from '/assets/cover_image.png'
-import faviconImg from '/assets/favicon.png'
+import coverImg from '../../assets/cover_image.png'
+import faviconImg from '../../assets/favicon.png'
 import Head from 'next/head'
 
 export const MetaHead = () => {

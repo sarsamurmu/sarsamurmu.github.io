@@ -7,9 +7,9 @@ import { useCallback, useContext, useRef } from 'react'
 import { AnimCtx } from './animation_manager'
 import Image from 'next/image'
 import { DM_Mono, Inter } from 'next/font/google'
-import leaf_svg from '/assets/leaf.svg'
-import leaf2_svg from '/assets/leaf_2.svg'
-import hey_svg from '/assets/hey.svg'
+import leaf_svg from '../../assets/leaf.svg'
+import leaf2_svg from '../../assets/leaf_2.svg'
+import hey_svg from '../../assets/hey.svg'
 
 // ScrollTrigger.defaults({ markers: true })
 
@@ -349,8 +349,8 @@ export const About = () => {
       <Cross />
       <FadeIn>
         <p style={{ marginTop: 30 }}>
-          Hello, I am Sarsa Murmu, a 20 years old student who does programming sometimes.
-          If you've come here then you most probably know who I am and what I do.
+          Hello, I am Sarsa Murmu, a 21 years old student who does programming sometimes.
+          If you've come here then you probably know who I am and what I do.
           Check out my GitHub and social networking sites for more.
         </p>
       </FadeIn>
@@ -464,9 +464,7 @@ export const Connect = () => {
       <ul className={s.connectList}>
         {[
           ['GitHub', 'https://github.com/sarsamurmu'],
-          ['X {Twitter}', 'https://x.com/sarsamurmu'],
           ['Telegram', 'https://telegram.me/sarsamurmu'],
-          ['Discord', 'https://discordapp.com/users/520857452087083038']
         ].map(([name, link]) => (
           <li key={name}>
             <a href={link} target='_blank' onMouseEnter={onMouseEnter} onMouseLeave={onMouseLeave}>
